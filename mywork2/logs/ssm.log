@@ -1,0 +1,919 @@
+[DEBUG] [2019-07-01 14:48:31][org.springframework.test.context.junit4.SpringJUnit4ClassRunner]SpringJUnit4ClassRunner constructor called with [class com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:31][org.springframework.test.context.BootstrapUtils]Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.BootstrapUtils]Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.BootstrapUtils]Instantiating TestContextBootstrapper for test class [com.zlx.clinic.Test] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.AbstractDelegatingSmartContextLoader]Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@7a52f2a2 declaringClass = 'com.zlx.clinic.Test', classes = '{}', locations = '{classpath:spring/applicationContext-dao.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.ActiveProfilesUtils]Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.DefaultTestContextBootstrapper]@TestExecutionListeners is not present for class [com.zlx.clinic.Test]: using defaults.
+[INFO] [2019-07-01 14:48:32][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2019-07-01 14:48:32][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@72a7c7e0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2e4b8173, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@70e8f8e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@17046283, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5bd03f44, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@29626d54]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]Before test class: context [DefaultTestContext@3c407114 testClass = Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.DependencyInjectionTestExecutionListener]Performing dependency injection for test context [[DefaultTestContext@3c407114 testClass = Test, testInstance = com.zlx.clinic.Test@1ea9f6af, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]]].
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.AbstractDelegatingSmartContextLoader]Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.AbstractGenericContextLoader]Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[DEBUG] [2019-07-01 14:48:32][org.springframework.core.env.StandardEnvironment]Activating profiles []
+[DEBUG] [2019-07-01 14:48:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loaded 4 bean definitions from class path resource [spring/applicationContext-dao.xml]
+[DEBUG] [2019-07-01 14:48:32][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@7b9a4292
+[DEBUG] [2019-07-01 14:48:32][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+[DEBUG] [2019-07-01 14:48:32][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.mybatis.spring.mapper.MapperScannerConfigurer#0'
+[DEBUG] [2019-07-01 14:48:32][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/AdminMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/DoctorMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/ItemOutTreateMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicApplyMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicOrderMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicineMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/OutTreateMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientOrderMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/RoomMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/TreatMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mymapper/MyFindDoctorMapper.class]
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'adminMapper' and 'com.zlx.clinic.mapper.AdminMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'doctorMapper' and 'com.zlx.clinic.mapper.DoctorMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'itemOutTreateMapper' and 'com.zlx.clinic.mapper.ItemOutTreateMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicApplyMapper' and 'com.zlx.clinic.mapper.MedicApplyMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicOrderMapper' and 'com.zlx.clinic.mapper.MedicOrderMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicineMapper' and 'com.zlx.clinic.mapper.MedicineMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'outTreateMapper' and 'com.zlx.clinic.mapper.OutTreateMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'patientMapper' and 'com.zlx.clinic.mapper.PatientMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'patientOrderMapper' and 'com.zlx.clinic.mapper.PatientOrderMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'roomMapper' and 'com.zlx.clinic.mapper.RoomMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'treatMapper' and 'com.zlx.clinic.mapper.TreatMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'myFindDoctorMapper' and 'com.zlx.clinic.mymapper.MyFindDoctorMapper' mapperInterface
+[DEBUG] [2019-07-01 14:48:32][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+[DEBUG] [2019-07-01 14:48:32][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.driver' in PropertySource 'localProperties' with value of type String
+[WARN] [2019-07-01 14:48:32][org.springframework.context.support.GenericApplicationContext]Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'dataSource' defined in class path resource [spring/applicationContext-dao.xml]: Could not resolve placeholder 'jdbc.url' in value "${jdbc.url}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jdbc.url' in value "${jdbc.url}"
+[ERROR] [2019-07-01 14:48:32][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@70e8f8e] to prepare test instance [com.zlx.clinic.Test@1ea9f6af]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'dataSource' defined in class path resource [spring/applicationContext-dao.xml]: Could not resolve placeholder 'jdbc.url' in value "${jdbc.url}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jdbc.url' in value "${jdbc.url}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:228)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:182)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:157)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:286)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:166)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:691)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:275)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 24 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'jdbc.url' in value "${jdbc.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:296)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:217)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:225)
+	... 36 more
+[DEBUG] [2019-07-01 14:48:32][org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]After test class: context [DefaultTestContext@3c407114 testClass = Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.junit4.SpringJUnit4ClassRunner]SpringJUnit4ClassRunner constructor called with [class com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.BootstrapUtils]Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.BootstrapUtils]Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.BootstrapUtils]Instantiating TestContextBootstrapper for test class [com.zlx.clinic.Test] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.AbstractDelegatingSmartContextLoader]Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@9629756 declaringClass = 'com.zlx.clinic.Test', classes = '{}', locations = '{classpath:spring/applicationContext-dao.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.ActiveProfilesUtils]Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.DefaultTestContextBootstrapper]@TestExecutionListeners is not present for class [com.zlx.clinic.Test]: using defaults.
+[INFO] [2019-07-01 14:49:39][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2019-07-01 14:49:39][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@55d56113, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@148080bb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@dc24521, org.springframework.test.context.support.DirtiesContextTestExecutionListener@10bdf5e5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6e1ec318, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7e0b0338]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]Before test class: context [DefaultTestContext@520a3426 testClass = Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18eed359 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.DependencyInjectionTestExecutionListener]Performing dependency injection for test context [[DefaultTestContext@520a3426 testClass = Test, testInstance = com.zlx.clinic.Test@3b0143d3, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18eed359 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]]].
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.AbstractDelegatingSmartContextLoader]Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@18eed359 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+[DEBUG] [2019-07-01 14:49:39][org.springframework.test.context.support.AbstractGenericContextLoader]Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@18eed359 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[DEBUG] [2019-07-01 14:49:39][org.springframework.core.env.StandardEnvironment]Activating profiles []
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loaded 4 bean definitions from class path resource [spring/applicationContext-dao.xml]
+[DEBUG] [2019-07-01 14:49:39][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@7c29daf3
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.mybatis.spring.mapper.MapperScannerConfigurer#0'
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/AdminMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/DoctorMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/ItemOutTreateMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicApplyMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicOrderMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicineMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/OutTreateMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientOrderMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/RoomMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/TreatMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mymapper/MyFindDoctorMapper.class]
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'adminMapper' and 'com.zlx.clinic.mapper.AdminMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'doctorMapper' and 'com.zlx.clinic.mapper.DoctorMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'itemOutTreateMapper' and 'com.zlx.clinic.mapper.ItemOutTreateMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicApplyMapper' and 'com.zlx.clinic.mapper.MedicApplyMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicOrderMapper' and 'com.zlx.clinic.mapper.MedicOrderMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicineMapper' and 'com.zlx.clinic.mapper.MedicineMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'outTreateMapper' and 'com.zlx.clinic.mapper.OutTreateMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'patientMapper' and 'com.zlx.clinic.mapper.PatientMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'patientOrderMapper' and 'com.zlx.clinic.mapper.PatientOrderMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'roomMapper' and 'com.zlx.clinic.mapper.RoomMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'treatMapper' and 'com.zlx.clinic.mapper.TreatMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'myFindDoctorMapper' and 'com.zlx.clinic.mymapper.MyFindDoctorMapper' mapperInterface
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+[DEBUG] [2019-07-01 14:49:39][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.driver' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:49:39][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.url' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:49:39][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.username' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:49:39][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.password' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'dataSource'
+[INFO] [2019-07-01 14:49:39][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.log.MLog]Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.log.MLog]The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.log.MLog]The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.log.MLog]The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.log.MLog]The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+[INFO] [2019-07-01 14:49:39][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5.3 [built 27-January-2019 00:11:37 -0800; debug? true; trace: 10]
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt0ooy142u2jc|30c15d8b,name=z8kfsxa31bt0ooy142u2jc|30c15d8b registered.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt0ooy142u2jc|30c15d8b,name=z8kfsxa31bt0ooy142u2jc|30c15d8b unregistered, in order to be reregistered after update.
+[DEBUG] [2019-07-01 14:49:39][com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt0ooy142u2jc|30c15d8b,name=z8kfsxa31bt0ooy142u2jc|30c15d8b registered.
+[DEBUG] [2019-07-01 14:49:39][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'sqlSessionFactory'
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.VFS]Class not found: org.jboss.vfs.VFS
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.JBoss6VFS]JBoss 6 VFS API is not available in this environment.
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.VFS]Class not found: org.jboss.vfs.VirtualFile
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.VFS]VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.VFS]Using VFS adapter org.apache.ibatis.io.DefaultVFS
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MyDoctorOut.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MyOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Listing file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyDoctorOut.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyDoctorOut.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 #
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.myentity.MyDoctorOut matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.myentity.MyOrder matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: Admin.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: Doctor.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreate.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApply.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: Medicine.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreate.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: Patient.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: Room.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: Treat.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Listing file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Admin.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Admin.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 N
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Doctor.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Doctor.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 w
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1E
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreate.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreate.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 Q
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApply.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApply.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 '
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Medicine.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Medicine.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 /
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 '
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreate.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreate.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 2
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1>
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Patient.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Patient.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 I
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1h
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrder.class
+[DEBUG] [2019-07-01 14:49:39][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrder.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 "
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Room.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Room.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 /
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Treat.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Treat.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 Q
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1v
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criterion.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Admin matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Doctor matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreate matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApply matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Medicine matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrder matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreate matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Patient matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrder matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Room matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Treat matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed configuration file: 'class path resource [mybatis/sqlMapConfig.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/AdminMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/DoctorMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/ItemOutTreateMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicApplyMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicOrderMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicineMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/OutTreateMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientOrderMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/RoomMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/TreatMapper.xml]'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'adminMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'doctorMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'itemOutTreateMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'medicApplyMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'medicOrderMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'medicineMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'outTreateMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'patientMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'patientOrderMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'roomMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'treatMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'myFindDoctorMapper'
+[DEBUG] [2019-07-01 14:49:40][org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]Storing ApplicationContext in cache under key [[MergedContextConfiguration@18eed359 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+[DEBUG] [2019-07-01 14:49:40][org.springframework.test.context.cache]Spring test ApplicationContext cache statistics: [DefaultContextCache@7dfd3c81 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+[DEBUG] [2019-07-01 14:49:40][org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]After test class: context [DefaultTestContext@520a3426 testClass = Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18eed359 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+[DEBUG] [2019-07-01 14:49:40][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@7c29daf3, started on Mon Jul 01 14:49:39 CST 2019
+[DEBUG] [2019-07-01 14:49:40][com.mchange.v2.c3p0.management.ActiveManagementCoordinator]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt0ooy142u2jc|30c15d8b,name=z8kfsxa31bt0ooy142u2jc|30c15d8b unregistered.
+[DEBUG] [2019-07-01 14:49:40][com.mchange.v2.c3p0.management.ActiveManagementCoordinator]C3P0Registry mbean unregistered.
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.junit4.SpringJUnit4ClassRunner]SpringJUnit4ClassRunner constructor called with [class com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.BootstrapUtils]Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.BootstrapUtils]Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.BootstrapUtils]Instantiating TestContextBootstrapper for test class [com.zlx.clinic.Test] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.AbstractDelegatingSmartContextLoader]Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@7a52f2a2 declaringClass = 'com.zlx.clinic.Test', classes = '{}', locations = '{classpath:spring/applicationContext-dao.xml}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.ActiveProfilesUtils]Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.DefaultTestContextBootstrapper]@TestExecutionListeners is not present for class [com.zlx.clinic.Test]: using defaults.
+[INFO] [2019-07-01 14:50:26][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2019-07-01 14:50:26][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@72a7c7e0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2e4b8173, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@70e8f8e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@17046283, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5bd03f44, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@29626d54]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]Before test class: context [DefaultTestContext@3c407114 testClass = Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.annotation.ProfileValueUtils]Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zlx.clinic.Test]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.DependencyInjectionTestExecutionListener]Performing dependency injection for test context [[DefaultTestContext@3c407114 testClass = Test, testInstance = com.zlx.clinic.Test@1ea9f6af, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]]].
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.AbstractDelegatingSmartContextLoader]Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+[DEBUG] [2019-07-01 14:50:26][org.springframework.test.context.support.AbstractGenericContextLoader]Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[DEBUG] [2019-07-01 14:50:26][org.springframework.core.env.StandardEnvironment]Activating profiles []
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loaded 4 bean definitions from class path resource [spring/applicationContext-dao.xml]
+[DEBUG] [2019-07-01 14:50:26][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@7b9a4292
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.mybatis.spring.mapper.MapperScannerConfigurer#0'
+[DEBUG] [2019-07-01 14:50:26][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/AdminMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/DoctorMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/ItemOutTreateMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicApplyMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicOrderMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicineMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/OutTreateMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientOrderMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/RoomMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/TreatMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Identified candidate component class: file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mymapper/MyFindDoctorMapper.class]
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'adminMapper' and 'com.zlx.clinic.mapper.AdminMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'doctorMapper' and 'com.zlx.clinic.mapper.DoctorMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'itemOutTreateMapper' and 'com.zlx.clinic.mapper.ItemOutTreateMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicApplyMapper' and 'com.zlx.clinic.mapper.MedicApplyMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicOrderMapper' and 'com.zlx.clinic.mapper.MedicOrderMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'medicineMapper' and 'com.zlx.clinic.mapper.MedicineMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'outTreateMapper' and 'com.zlx.clinic.mapper.OutTreateMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'patientMapper' and 'com.zlx.clinic.mapper.PatientMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'patientOrderMapper' and 'com.zlx.clinic.mapper.PatientOrderMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'roomMapper' and 'com.zlx.clinic.mapper.RoomMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'treatMapper' and 'com.zlx.clinic.mapper.TreatMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.mybatis.spring.mapper.ClassPathMapperScanner]Creating MapperFactoryBean with name 'myFindDoctorMapper' and 'com.zlx.clinic.mymapper.MyFindDoctorMapper' mapperInterface
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+[DEBUG] [2019-07-01 14:50:26][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.driver' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:50:26][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.url' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:50:26][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.username' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:50:26][org.springframework.core.env.PropertySourcesPropertyResolver]Found key 'jdbc.password' in PropertySource 'localProperties' with value of type String
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+[DEBUG] [2019-07-01 14:50:26][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'dataSource'
+[INFO] [2019-07-01 14:50:26][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.log.MLog]Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.log.MLog]The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.log.MLog]The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.log.MLog]The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.log.MLog]The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+[DEBUG] [2019-07-01 14:50:26][com.mchange.v2.cfg.MConfig]The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+[INFO] [2019-07-01 14:50:27][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5.3 [built 27-January-2019 00:11:37 -0800; debug? true; trace: 10]
+[DEBUG] [2019-07-01 14:50:27][com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt1pa17vapno|3b96c42e,name=z8kfsxa31bt1pa17vapno|3b96c42e registered.
+[DEBUG] [2019-07-01 14:50:27][com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt1pa17vapno|3b96c42e,name=z8kfsxa31bt1pa17vapno|3b96c42e unregistered, in order to be reregistered after update.
+[DEBUG] [2019-07-01 14:50:27][com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt1pa17vapno|3b96c42e,name=z8kfsxa31bt1pa17vapno|3b96c42e registered.
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'sqlSessionFactory'
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.VFS]Class not found: org.jboss.vfs.VFS
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.JBoss6VFS]JBoss 6 VFS API is not available in this environment.
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.VFS]Class not found: org.jboss.vfs.VirtualFile
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.VFS]VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.VFS]Using VFS adapter org.apache.ibatis.io.DefaultVFS
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MyDoctorOut.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MyOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Listing file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyDoctorOut.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyDoctorOut.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/myentity/MyOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 #
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.myentity.MyDoctorOut matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.myentity.MyOrder matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: Admin.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: AdminExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: Doctor.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: DoctorExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreate.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ItemOutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApply.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicApplyExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: Medicine.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicineExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: MedicOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreate.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: OutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: Patient.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: PatientOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: Room.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: RoomExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: Treat.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: TreatExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Listing file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Admin.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Admin.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 N
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/AdminExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Doctor.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Doctor.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 w
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/DoctorExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1E
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreate.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreate.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 Q
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/ItemOutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApply.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApply.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 '
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicApplyExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Medicine.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Medicine.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 /
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicineExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 '
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/MedicOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreate.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreate.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 2
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/OutTreateExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1>
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Patient.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Patient.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 I
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1h
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1�
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrder.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 "
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/PatientOrderExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Room.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Room.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 /
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 �
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/RoomExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Treat.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/Treat.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 Q
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 M
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1v
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$Criterion.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1 E	 
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Find JAR URL: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Not a JAR: file:/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/entity/TreatExample$GeneratedCriteria.class
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.DefaultVFS]Reader entry: ����   1
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Admin matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.AdminExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Doctor matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.DoctorExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreate matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.ItemOutTreateExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApply matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicApplyExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Medicine matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicineExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrder matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.MedicOrderExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreate matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.OutTreateExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Patient matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrder matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.PatientOrderExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Room matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.RoomExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.Treat matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample$Criteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample$Criterion matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.apache.ibatis.io.ResolverUtil]Checking to see if class com.zlx.clinic.entity.TreatExample$GeneratedCriteria matches criteria [is assignable to Object]
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed configuration file: 'class path resource [mybatis/sqlMapConfig.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/AdminMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/DoctorMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/ItemOutTreateMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicApplyMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicOrderMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/MedicineMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/OutTreateMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/PatientOrderMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/RoomMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.mybatis.spring.SqlSessionFactoryBean]Parsed mapper file: 'file [/home/zhonglianxi/IdeaProjects/keshe19/clinic/mywork2/target/classes/com/zlx/clinic/mapper/TreatMapper.xml]'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'adminMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'doctorMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'itemOutTreateMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'medicApplyMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'medicOrderMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'medicineMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'outTreateMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'patientMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'patientOrderMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'roomMapper'
+[DEBUG] [2019-07-01 14:50:27][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'treatMapper'
+[DEBUG] [2019-07-01 14:50:28][org.springframework.beans.factory.support.DefaultListableBeanFactory]Creating shared instance of singleton bean 'myFindDoctorMapper'
+[DEBUG] [2019-07-01 14:50:28][org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]Storing ApplicationContext in cache under key [[MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+[DEBUG] [2019-07-01 14:50:28][org.springframework.test.context.cache]Spring test ApplicationContext cache statistics: [DefaultContextCache@5a2f016d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+[DEBUG] [2019-07-01 14:50:28][org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]After test class: context [DefaultTestContext@3c407114 testClass = Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@35ef1869 testClass = Test, locations = '{classpath:spring/applicationContext-dao.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+[DEBUG] [2019-07-01 14:50:28][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@7b9a4292, started on Mon Jul 01 14:50:26 CST 2019
+[DEBUG] [2019-07-01 14:50:28][com.mchange.v2.c3p0.management.ActiveManagementCoordinator]MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=z8kfsxa31bt1pa17vapno|3b96c42e,name=z8kfsxa31bt1pa17vapno|3b96c42e unregistered.
+[DEBUG] [2019-07-01 14:50:28][com.mchange.v2.c3p0.management.ActiveManagementCoordinator]C3P0Registry mbean unregistered.
