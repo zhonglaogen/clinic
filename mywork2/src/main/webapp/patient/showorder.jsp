@@ -24,7 +24,16 @@
             <td>${mdoctor.doctor.dName }</td>
             <td>${mdoctor.doctor.dGender}</td>
             <td>${mdoctor.itemDate}</td>
-            <td><a href="javascript:void(0) ">取消预约</a></td>
+            <td>
+                <c:choose>
+                    <c:when test="${mdoctor.patientOrder.oGo}">
+                        <a href="javascript:void(0)">取消预约</a>
+                    </c:when>
+                    <c:otherwise>
+                        失效
+                    </c:otherwise>
+                </c:choose>
+            </td>
         </tr>
     </c:forEach>
 </table>

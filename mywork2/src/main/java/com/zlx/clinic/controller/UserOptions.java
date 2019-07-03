@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
+@RequestMapping("/patient")
 public class UserOptions {
 
 
@@ -27,7 +28,7 @@ public class UserOptions {
      * @param patient
      * @return
      */
-    @RequestMapping("userlogin")
+    @RequestMapping("/userlogin")
     public String userLogin(ModelAndView modelAndView, HttpSession session, Patient patient){
         if( patientService.patientLogin(patient)){
             System.out.println("login succeess");
@@ -48,7 +49,7 @@ public class UserOptions {
      * @param    rID  科室id
      * @return
      */
-    @RequestMapping("chooseroom")
+    @RequestMapping("/chooseroom")
     public String chooseRoom(HttpSession session,int rId){
       List<MyDoctorOut> doctors = patientService.findDoctorByRID(rId);
      session.setAttribute("doctors",doctors);
@@ -61,7 +62,7 @@ public class UserOptions {
      * 需要包含用户id，医生id，科室id
      * @return
      */
-    @RequestMapping("apply")
+    @RequestMapping("/apply")
     public String userApply(HttpSession session,MyOrder myOrder) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         myOrder.setUserID(patient.getpId());
@@ -80,7 +81,7 @@ public class UserOptions {
      * @param pID 病人id
      * @return
      */
-    @RequestMapping("showapply")
+    @RequestMapping("/showapply")
     public String showApply(HttpSession session,ModelAndView modelAndView){
         Patient patient= (Patient) session.getAttribute("patient");
         List<MyDoctorOut> orders= patientService.findOrderByPID(patient.getpId());

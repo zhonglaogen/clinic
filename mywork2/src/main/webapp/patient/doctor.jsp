@@ -37,7 +37,7 @@
                 <c:choose>
                 <c:when test="${mdoctor.itemOutTreate.dCount >0}">
                 <a href="${pageContext.request.contextPath }
-                /apply.action?iId=${mdoctor.itemOutTreate.iId}">预约</a>
+                /patient/apply.action?iId=${mdoctor.itemOutTreate.iId}">预约</a>
             </c:when>
             <c:otherwise>
                 已满
@@ -53,7 +53,7 @@
     ${sessionScope.get("patient").pName}<br>
     电话：
     ${sessionScope.get("patient").pPhone}<br>
-    <a href="/showapply.action">已预约</a>
+    <a href="/patient/showapply.action">已预约</a>
 </div>
 
 

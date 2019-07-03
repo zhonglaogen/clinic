@@ -8,6 +8,7 @@ import com.zlx.clinic.mymapper.MyPatientFindMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 @Transactional
 public class PatientService {
@@ -76,12 +77,17 @@ public class PatientService {
      * @return
      */
     public  boolean patientApply(MyOrder myOrder)throws Exception{
+        //查出当前iId的医生剩余名额信息
         MyDoctorOut myDoctorOut = myPatientFindMapper.findCountByDidDate(myOrder.getiId());
-
+        PatientOrderExample patientOrderExample=new PatientOrderExample();
+        PatientOrderExample.Criteria criteria=patientOrderExample.createCriteria();
+        criteria.andIIdEqualTo(myOrder.getiId());
+        //检查是否是黑名单成员
         //检查是否已经预约过
-        if(itemOutTreateMapper.selectByPrimaryKey(myOrder.getiId())==null){
+        List<PatientOrder> patientOrders = patientOrderMapper.selectByExample(patientOrderExample);
+        if(patientOrders.size()==0){
             ItemOutTreate itemOutTreate = myDoctorOut.getItemOutTreate();
-            //总预约数目-已经预约数目>0， 可以预约
+            //预约数目>0， 可以预约
             if(itemOutTreate.getdCount()>0){
                 //减少可预约约人数
                 int count=itemOutTreate.getdCount();
@@ -91,6 +97,8 @@ public class PatientService {
                 PatientOrder o1=new PatientOrder();
                 o1.setpId(myOrder.getUserID());
                 o1.setiId(itemOutTreate.getiId());
+                o1.setoDate(new Date());
+                o1.setoGo(true);
                 orderMapper.insert(o1);
                 return true;
             }else {

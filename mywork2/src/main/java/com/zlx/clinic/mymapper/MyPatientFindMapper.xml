@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zlx.clinic.mymapper.MyPatientFindMapper" >
+<mapper namespace="com.zlx.clinic.mymapper.MyPatientFindMapper">
 
     <resultMap id="findDoctorsByRIdMap" type="MyDoctorOut">
         <association property="itemOutTreate" javaType="ItemOutTreate">
@@ -14,11 +14,19 @@
             <result column="d_name" property="dName"/>
             <result column="d_gender" property="dGender"/>
         </association>
-
+        <association property="patientOrder" javaType="PatientOrder">
+            <id column="o_id" property="oId"/>
+            <result column="o_go" property="oGo"/>
+        </association>
     </resultMap>
+    <sql id="descFindByDate">
+      order by
+      i_date
+      desc
+    </sql>
 
 
-
+    <!--根据科室差近七日医生列表-->
     <select id="findDoctorByRId" parameterType="int" resultMap="findDoctorsByRIdMap">
       select *
       from
@@ -27,10 +35,13 @@
       clinic.doctor
       on
       item_out_treate.d_id=doctor.d_id
-      where
-      doctor.r_id=#{rId}
+      <where>
+          doctor.r_id=#{rId}
+          <include refid="descFindByDate"/>
+      </where>
     </select>
 
+    <!--根据医生id和日期查询是否有剩余名额-->
     <select id="findCountByDidDate" parameterType="int" resultMap="findDoctorsByRIdMap">
       select *
       from
@@ -39,20 +50,28 @@
       clinic.doctor
       on
       item_out_treate.d_id=doctor.d_id
-      where
-      item_out_treate.i_id=#{iId}
+      <where>
+          item_out_treate.i_id=#{iId}
+          <include refid="descFindByDate"/>
+      </where>
     </select>
 
+    <!--根据病人id查预约单-->
     <select id="findOrderByPid" parameterType="int" resultMap="findDoctorsByRIdMap">
         select *
         from
-        clinic.item_out_treate
+        patient_order
         join
         clinic.doctor
+        join
+        clinic.item_out_treate
         on
-        item_out_treate.d_id=doctor.d_id
-        where
-        i_id in (select patient_order.i_id from patient_order where p_id=#{pId})
+        item_out_treate.d_id=doctor.d_id and
+        patient_order.i_id=item_out_treate.i_id
+        <where>
+            p_id=#{pId}
+            <include refid="descFindByDate"/>
+        </where>
     </select>
 
 </mapper>
