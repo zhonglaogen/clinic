@@ -8,6 +8,7 @@ import com.zlx.clinic.mymapper.MyPatientFindMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 @Transactional
@@ -28,7 +29,7 @@ public class PatientService {
      * @param patient
      * @return
      */
-    public boolean patientLogin(Patient patient){
+    public boolean patientLogin(Patient patient)throws Exception{
         PatientExample patientExample=new PatientExample();
         PatientExample.Criteria criteria=patientExample.createCriteria();
         criteria.andPPhoneEqualTo(patient.getpPhone());
@@ -51,7 +52,7 @@ public class PatientService {
      * @param phone
      * @return
      */
-    public Patient findByPhone(String phone){
+    public Patient findByPhone(String phone)throws Exception{
         PatientExample patientExample=new PatientExample();
         PatientExample.Criteria criteria=patientExample.createCriteria();
         criteria.andPPhoneEqualTo(phone);
@@ -62,10 +63,10 @@ public class PatientService {
 
     /**
      *
-     * @param roomId 根据roomid查询近七日所有该科室的出诊医师
+     * @param rId 根据roomid查询近七日所有该科室的出诊医师
      * @return
      */
-    public List<MyDoctorOut> findDoctorByRID(int rId){
+    public List<MyDoctorOut> findDoctorByRID(int rId)throws Exception{
         List<MyDoctorOut> doctors = myPatientFindMapper.findDoctorByRId(rId);
         return doctors;
     }
@@ -113,13 +114,45 @@ public class PatientService {
 
     /**
      * 查询该用户的所有预约单
-     * @param pID
+     * @param
      * @return
      */
-    public List<MyDoctorOut> findOrderByPID(int pId){
+    public List<MyDoctorOut> findOrderByPID(int pId)throws Exception{
         List<MyDoctorOut> orderByPid = myPatientFindMapper.findOrderByPid(pId);
 
         return orderByPid;
+    }
+
+
+    /**
+     * 取消oId订单
+     * @param
+     * @return
+     * @throws Exception
+     */
+    public boolean deleteOrder(PatientOrder patientOrder)throws Exception{
+        patientOrder= orderMapper.selectByPrimaryKey(patientOrder.getoId());
+        //检查是否超过一天
+        Date date = patientOrder.getoDate();
+        //当前日期
+        Date date1=new Date();
+        long time = date.getTime();
+        long time1 = date1.getTime();
+        if((time1-time)/(60*60*1000)>24){
+            //查询医生名额信息
+            ItemOutTreate itemOutTreate = itemOutTreateMapper.selectByPrimaryKey(patientOrder.getiId());
+            Integer count = itemOutTreate.getdCount();
+            //名额加一
+            itemOutTreate.setdCount(++count);
+            itemOutTreateMapper.updateByPrimaryKey(itemOutTreate);
+            //删除预约记录
+            orderMapper.deleteByPrimaryKey(patientOrder.getoId());
+
+            return true;
+        }
+        //时间未超过一天（24小时）
+        return false;
+
     }
 
 }

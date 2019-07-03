@@ -13,19 +13,19 @@ public interface MyPatientFindMapper {
      * @param rid
      * @return
      */
-    public List<MyDoctorOut> findDoctorByRId(int rid);
+    public List<MyDoctorOut> findDoctorByRId(int rid)throws Exception;
 
     /**
      * 根据日期查询是否还有剩余名额
      * @param i_id
      * @return
      */
-    public MyDoctorOut findCountByDidDate(int iId);
+    public MyDoctorOut findCountByDidDate(int iId)throws Exception;
 
     /**
      * 查询预约单
      * @param pId
      * @return
      */
-    public List<MyDoctorOut> findOrderByPid(int pId);
+    public List<MyDoctorOut> findOrderByPid(int pId)throws Exception;
 }

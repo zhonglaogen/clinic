@@ -23,21 +23,22 @@ public class UserOptions {
     private PatientService patientService;
 
     /**
-     *  patient login
+     * patient login
+     *
      * @param modelAndView
      * @param patient
      * @return
      */
     @RequestMapping("/userlogin")
-    public String userLogin(ModelAndView modelAndView, HttpSession session, Patient patient){
-        if( patientService.patientLogin(patient)){
+    public String userLogin(ModelAndView modelAndView, HttpSession session, Patient patient) throws Exception {
+        if (patientService.patientLogin(patient)) {
             System.out.println("login succeess");
-            patient= patientService.findByPhone(patient.getpPhone());
+            patient = patientService.findByPhone(patient.getpPhone());
 //            将patient信息完整存入session中
-            session.setAttribute("patient",patient);
+            session.setAttribute("patient", patient);
             return "patient/index";
-        }else {
-            modelAndView.addObject("error","user or password error");
+        } else {
+            modelAndView.addObject("error", "user or password error");
             return "patient/userlogin";
         }
 
@@ -45,51 +46,68 @@ public class UserOptions {
 
     /**
      * 用户选择相应的科室后，列出该科室具体的出诊医师
-     * @param  modelAndView
-     * @param    rID  科室id
+     *
+     * @param modelAndView
+     * @param rID          科室id
      * @return
      */
     @RequestMapping("/chooseroom")
-    public String chooseRoom(HttpSession session,int rId){
-      List<MyDoctorOut> doctors = patientService.findDoctorByRID(rId);
-     session.setAttribute("doctors",doctors);
-      return "patient/doctor";
-  }
+    public String chooseRoom(HttpSession session, int rId) throws Exception {
+        List<MyDoctorOut> doctors = patientService.findDoctorByRID(rId);
+        session.setAttribute("doctors", doctors);
+        return "patient/doctor";
+    }
 
 
     /**
      * 用户申请
      * 需要包含用户id，医生id，科室id
+     *
      * @return
      */
     @RequestMapping("/apply")
-    public String userApply(HttpSession session,MyOrder myOrder) throws Exception {
+    public String userApply(HttpSession session, MyOrder myOrder) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         myOrder.setUserID(patient.getpId());
-        System.out.println("+++++++++++++++++="+myOrder.getDoctorID());
+        System.out.println("+++++++++++++++++=" + myOrder.getDoctorID());
         boolean b = patientService.patientApply(myOrder);
-        if(b){
+        if (b) {
             return "patient/apply";
-        }else {
+        } else {
             return "patient/fail";
         }
 
     }
 
     /**
-     *  查看已预约条目
+     * 查看已预约条目
+     *
      * @param pID 病人id
      * @return
      */
     @RequestMapping("/showapply")
-    public String showApply(HttpSession session,ModelAndView modelAndView){
-        Patient patient= (Patient) session.getAttribute("patient");
-        List<MyDoctorOut> orders= patientService.findOrderByPID(patient.getpId());
-        session.setAttribute("orders",orders);
+    public String showApply(HttpSession session, ModelAndView modelAndView) throws Exception {
+        Patient patient = (Patient) session.getAttribute("patient");
+        List<MyDoctorOut> orders = patientService.findOrderByPID(patient.getpId());
+        session.setAttribute("orders", orders);
         return "patient/showorder";
     }
 
-
+    /**
+     * 取消预约
+     *
+     * @param patientOrder
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/cancelorder")
+    public String cancleOrder(PatientOrder patientOrder) throws Exception {
+        if (patientService.deleteOrder(patientOrder)) {
+            return "patient/apply";
+        } else {
+            return "patient/fail";
+        }
+    }
 
 
 }

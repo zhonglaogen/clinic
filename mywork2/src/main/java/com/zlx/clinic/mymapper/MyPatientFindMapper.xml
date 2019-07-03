@@ -16,7 +16,9 @@
         </association>
         <association property="patientOrder" javaType="PatientOrder">
             <id column="o_id" property="oId"/>
+            <result column="i_id" property="iId"/>
             <result column="o_go" property="oGo"/>
+            <result column="o_date" property="oDate"/>
         </association>
     </resultMap>
     <sql id="descFindByDate">
