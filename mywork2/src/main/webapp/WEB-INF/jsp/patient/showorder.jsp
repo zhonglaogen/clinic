@@ -18,6 +18,7 @@
         <td>医生</td>
         <td>性别</td>
         <td>出诊日期</td>
+        <%--下单时间，订单号--%>
     </tr>
     <c:forEach items="${orders}" var="mdoctor">
         <tr>
@@ -26,11 +27,11 @@
             <td>${mdoctor.itemDate}</td>
             <td>
                 <c:choose>
-                    <c:when test="${mdoctor.patientOrder.oGo}">
+                    <c:when test="${!mdoctor.patientOrder.oGo}">
                         <a href="/patient/cancelorder.action?oId=${mdoctor.patientOrder.oId}">取消预约</a>
                     </c:when>
                     <c:otherwise>
-                        失效
+                        已排号或超时未去
                     </c:otherwise>
                 </c:choose>
             </td>

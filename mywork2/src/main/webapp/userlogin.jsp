@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="get" action="/patient/userlogin.action">
+<form method="get" action="/patient/userLogin.action">
     <input type="text" name="pPhone">
     <input type="text" name="pPassword">
     <input type="submit">

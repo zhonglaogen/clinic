@@ -6,7 +6,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   <welcome-file-list>
-    <welcome-file>patient/userlogin.jsp</welcome-file>
+    <welcome-file>/userlogin.jsp</welcome-file>
   </welcome-file-list>
   <!-- 加载spring容器 -->
   <context-param>
@@ -40,6 +40,8 @@
 
 
 
+
+  <!--在web.xml添加post乱码filter-->
 
   <!--中文过滤器-->
 

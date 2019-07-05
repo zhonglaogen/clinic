@@ -7,6 +7,9 @@ import com.zlx.clinic.entity.PatientOrder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/** 用户输出映射
+ * 主要用来包装医生，订单，医生名额,用来查询医生名额和预约单
+ */
 public class MyDoctorOut {
     private Doctor doctor;
     private ItemOutTreate itemOutTreate;

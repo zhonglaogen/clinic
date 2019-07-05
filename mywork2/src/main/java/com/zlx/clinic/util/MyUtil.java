@@ -1,5 +1,6 @@
 package com.zlx.clinic.util;
 
+import org.junit.Test;
 import org.slf4j.LoggerFactory;
 
 import java.security.MessageDigest;
@@ -21,15 +22,30 @@ public class MyUtil {
      * @param password
      * @return
      */
+
+
     public static byte[] getcode(String password)throws Exception{
         byte[] md5;
             MessageDigest ms=MessageDigest.getInstance("MD5");
             md5=ms.digest(password.getBytes());
             return md5;
     }
-    public static SimpleDateFormat changeDate(Date date){
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        simpleDateFormat.format(date);
-        return simpleDateFormat;
+
+    /**
+     * 将日期转换为字符串 年/月/日
+     * @param date
+     * @return
+     */
+    public static String changeDate(Date date){
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        return simpleDateFormat.format(date);
     }
+
+    @Test
+    public void test1(){
+        Date date = new Date();
+        String s = MyUtil.changeDate(date);
+        System.out.println(s);
+    }
+
 }

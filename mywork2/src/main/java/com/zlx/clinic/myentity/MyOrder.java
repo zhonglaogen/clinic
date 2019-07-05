@@ -2,6 +2,9 @@ package com.zlx.clinic.myentity;
 
 import java.util.Date;
 
+/** 包装前台数据，用来生成预约单
+ * 主要用来包装申请预约的信息
+ */
 public class MyOrder {
     private Integer userID;
     private Integer doctorID;

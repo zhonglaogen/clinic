@@ -12,7 +12,9 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
-    <!-- 商品管理的service -->
+
     <bean id="userService" class="com.zlx.clinic.service.PatientService"></bean>
+    <bean id="adminService" class="com.zlx.clinic.service.AdminService"></bean>
+    <bean id="doctorService" class="com.zlx.clinic.service.DoctorService"></bean>
 
 </beans>

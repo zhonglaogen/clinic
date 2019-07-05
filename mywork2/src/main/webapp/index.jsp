@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,11 +19,19 @@
     <input type="submit">
 </form>
 <div class="bar">
-    姓名：
-    ${sessionScope.get("patient").pName}<br>
-    电话：
-    ${sessionScope.get("patient").pPhone}<br>
-    <a href="/patient/showapply.action">已预约</a>
+    <c:choose>
+        <c:when test="${patient!=null}">
+        姓名：
+        ${sessionScope.get("patient").pName}<br>
+        电话：
+        ${sessionScope.get("patient").pPhone}<br>
+        <a href="/patient/showapply.action">已预约</a>
+        </c:when>
+    <c:otherwise>
+        <<a href="/userlogin.jsp">请登录</a>
+    </c:otherwise>
+    </c:choose>
+
 </div>
 </body>
 </html>

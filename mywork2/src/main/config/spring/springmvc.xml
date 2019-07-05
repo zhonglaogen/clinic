@@ -62,7 +62,7 @@
             <bean class="com.zlx.clinic.interceptor.HandlerInterceptor1">
                 <property name="excludedUrls">
                     <list>
-                        <value>/userlogin</value>
+                        <value>Login</value>
                     </list>
                 </property>
             </bean>

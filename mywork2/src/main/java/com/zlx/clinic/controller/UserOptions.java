@@ -8,7 +8,9 @@ import com.zlx.clinic.myentity.MyOrder;
 import com.zlx.clinic.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -23,25 +25,23 @@ public class UserOptions {
     private PatientService patientService;
 
     /**
+     * 页面中input的name和controller的pojo形参中的属性名称一致，将页面中数据绑定到pojo。
      * patient login
      *
      * @param modelAndView
      * @param patient
      * @return
      */
-    @RequestMapping("/userlogin")
-    public String userLogin(ModelAndView modelAndView, HttpSession session, Patient patient) throws Exception {
-        if (patientService.patientLogin(patient)) {
-            System.out.println("login succeess");
-            patient = patientService.findByPhone(patient.getpPhone());
+    @RequestMapping(value = "/userLogin",method = {RequestMethod.GET,RequestMethod.POST})
+    public String userLogin(Model model, HttpSession session, Patient patient) throws Exception {
+        Patient patient1 = patientService.patientLogin(patient);
+        if (patient1!=null) {
 //            将patient信息完整存入session中
-            session.setAttribute("patient", patient);
-            return "patient/index";
-        } else {
-            modelAndView.addObject("error", "user or password error");
-            return "patient/userlogin";
+            session.setAttribute("patient", patient1);
+            return "/index";
         }
-
+        model.addAttribute("result","fail");
+            return "/userlogin";
     }
 
     /**
@@ -51,11 +51,11 @@ public class UserOptions {
      * @param rID          科室id
      * @return
      */
-    @RequestMapping("/chooseroom")
+    @RequestMapping(value = "/chooseroom",method = {RequestMethod.GET,RequestMethod.POST})
     public String chooseRoom(HttpSession session, int rId) throws Exception {
         List<MyDoctorOut> doctors = patientService.findDoctorByRID(rId);
         session.setAttribute("doctors", doctors);
-        return "patient/doctor";
+        return "/WEB-INF/jsp/patient/doctor";
     }
 
 
@@ -65,16 +65,16 @@ public class UserOptions {
      *
      * @return
      */
-    @RequestMapping("/apply")
+    @RequestMapping(value = "/apply",method = {RequestMethod.GET,RequestMethod.POST})
     public String userApply(HttpSession session, MyOrder myOrder) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         myOrder.setUserID(patient.getpId());
         System.out.println("+++++++++++++++++=" + myOrder.getDoctorID());
         boolean b = patientService.patientApply(myOrder);
         if (b) {
-            return "patient/apply";
+            return "/WEB-INF/jsp/patient/apply";
         } else {
-            return "patient/fail";
+            return "/WEB-INF/jsp/patient/fail";
         }
 
     }
@@ -85,12 +85,12 @@ public class UserOptions {
      * @param pID 病人id
      * @return
      */
-    @RequestMapping("/showapply")
+    @RequestMapping(value = "/showapply",method = {RequestMethod.GET,RequestMethod.POST})
     public String showApply(HttpSession session, ModelAndView modelAndView) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         List<MyDoctorOut> orders = patientService.findOrderByPID(patient.getpId());
         session.setAttribute("orders", orders);
-        return "patient/showorder";
+        return "/WEB-INF/jsp/patient/showorder";
     }
 
     /**
@@ -100,12 +100,12 @@ public class UserOptions {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/cancelorder")
+    @RequestMapping(value = "/cancelorder",method = {RequestMethod.GET,RequestMethod.POST})
     public String cancleOrder(PatientOrder patientOrder) throws Exception {
         if (patientService.deleteOrder(patientOrder)) {
-            return "patient/apply";
+            return "/WEB-INF/jsp/patient/apply";
         } else {
-            return "patient/fail";
+            return "/WEB-INF/jsp/patient/fail";
         }
     }
 
