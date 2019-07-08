@@ -10,20 +10,28 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.swing.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedTransferQueue;
 
 public class Test extends JFrame
 {
 
-    public static void main(String[] args) {
-       Integer a=18888;
-        System.out.println(a.toString());
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        Date date = simpleDateFormat.parse("2019-7-8");
+        //当前日期
+        Calendar c=Calendar.getInstance();
+        c.setTime(date);
+        int i = c.get(Calendar.DATE);
+        c.set(Calendar.DATE,--i);
+        Date time = c.getTime();
+
+        //当前日期大于指定天数－１
+        System.out.println(new Date().compareTo(time)>0);
+
     }
 
     private static int testSwitch() {

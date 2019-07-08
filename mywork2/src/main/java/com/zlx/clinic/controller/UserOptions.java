@@ -1,16 +1,19 @@
 package com.zlx.clinic.controller;
 
-import com.zlx.clinic.entity.Doctor;
 import com.zlx.clinic.entity.Patient;
 import com.zlx.clinic.entity.PatientOrder;
 import com.zlx.clinic.myentity.MyDoctorOut;
 import com.zlx.clinic.myentity.MyOrder;
+import com.zlx.clinic.myentity.MyRoomDate;
+import com.zlx.clinic.service.AdminService;
 import com.zlx.clinic.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -28,12 +31,12 @@ public class UserOptions {
      * 页面中input的name和controller的pojo形参中的属性名称一致，将页面中数据绑定到pojo。
      * patient login
      *
-     * @param modelAndView
+     * @param
      * @param patient
      * @return
      */
     @RequestMapping(value = "/userLogin",method = {RequestMethod.GET,RequestMethod.POST})
-    public String userLogin(Model model, HttpSession session, Patient patient) throws Exception {
+    public String userLogin(Model model, HttpSession session, @RequestBody Patient patient) throws Exception {
         Patient patient1 = patientService.patientLogin(patient);
         if (patient1!=null) {
 //            将patient信息完整存入session中
@@ -47,7 +50,7 @@ public class UserOptions {
     /**
      * 用户选择相应的科室后，列出该科室具体的出诊医师
      *
-     * @param modelAndView
+     * @param
      * @param rID          科室id
      * @return
      */
@@ -68,8 +71,8 @@ public class UserOptions {
     @RequestMapping(value = "/apply",method = {RequestMethod.GET,RequestMethod.POST})
     public String userApply(HttpSession session, MyOrder myOrder) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
-        myOrder.setUserID(patient.getpId());
-        System.out.println("+++++++++++++++++=" + myOrder.getDoctorID());
+        myOrder.setpId(patient.getpId());
+        System.out.println("+++++++++++++++++=" + myOrder.getdId());
         boolean b = patientService.patientApply(myOrder);
         if (b) {
             return "/WEB-INF/jsp/patient/apply";
@@ -88,8 +91,10 @@ public class UserOptions {
     @RequestMapping(value = "/showapply",method = {RequestMethod.GET,RequestMethod.POST})
     public String showApply(HttpSession session, ModelAndView modelAndView) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
-        List<MyDoctorOut> orders = patientService.findOrderByPID(patient.getpId());
-        session.setAttribute("orders", orders);
+        List<MyDoctorOut>  validOrders= patientService.findValidOrderByPid(patient.getpId());
+        List<MyDoctorOut> invalidOrders = patientService.findInvalidOrderByPid(patient.getpId());
+        session.setAttribute("validOrders", validOrders);
+        session.setAttribute("invalidOrders", invalidOrders);
         return "/WEB-INF/jsp/patient/showorder";
     }
 
@@ -108,6 +113,8 @@ public class UserOptions {
             return "/WEB-INF/jsp/patient/fail";
         }
     }
+
+
 
 
 }

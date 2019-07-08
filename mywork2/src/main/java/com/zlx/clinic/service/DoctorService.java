@@ -11,6 +11,8 @@ import com.zlx.clinic.myentity.MyArrange;
 import com.zlx.clinic.util.mydata.MyNumMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -49,6 +51,7 @@ public class DoctorService {
         return null;
     }
 
+    //医生ｉｄ获取科室
     private Room getRoom(Doctor doctor){
         return roomMapper.selectByPrimaryKey(doctor.getrId());
     }
@@ -91,13 +94,16 @@ public class DoctorService {
      * @param treat
      */
     public void postTreat(Treat treat,Doctor doctor){
-        treatMapper.updateByPrimaryKeySelective(treat);
-        if (treat.gettType()!=0){
-            //通知药房管理员查看诊单(0,1代表有没有付款)
-        }
-        //将排号从队列中移除
         Room room = getRoom(doctor);
         String dId = doctor.getdId().toString();
+        //拿到队列首元素
+        MyArrange myArrange = callNum(doctor);
+        //治疗结束时间
+        treat.settDate(new Date());
+        //设置治疗的主键单号，
+        treat.settId(myArrange.getPatientOrder().gettId());
+        treatMapper.updateByPrimaryKeySelective(treat);
+        //将排号从队列中移除
         MyNumMap.removeNum(room.getrName(),dId);
 
     }

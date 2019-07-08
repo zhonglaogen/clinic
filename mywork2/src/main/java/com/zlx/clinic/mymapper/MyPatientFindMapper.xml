@@ -8,6 +8,7 @@
             <result column="d_id" property="dId"/>
             <result column="d_count" property="dCount"/>
             <result column="i_date" property="iDate"/>
+            <result column="i_up_down" property="iUpDown"/>
         </association>
         <association property="doctor" javaType="Doctor">
             <id column="d_id" property="dId"/>
@@ -30,36 +31,38 @@
 
     <!--根据科室差近七日医生列表-->
     <select id="findDoctorByRId" parameterType="int" resultMap="findDoctorsByRIdMap">
-      select *
-      from
-      clinic.item_out_treate
-      join
-      clinic.doctor
-      on
-      item_out_treate.d_id=doctor.d_id
-      <where>
-          doctor.r_id=#{rId}
-          <include refid="descFindByDate"/>
-      </where>
+        select *
+        from
+        clinic.item_out_treate
+        join
+        clinic.doctor
+        on
+        item_out_treate.d_id=doctor.d_id
+        <where>
+            doctor.r_id=#{rId}
+            and
+           to_days(item_out_treate.i_date)  >= to_days(now())
+            <include refid="descFindByDate"/>
+        </where>
     </select>
 
     <!--根据医生id和日期查询是否有剩余名额-->
     <select id="findCountByDidDate" parameterType="int" resultMap="findDoctorsByRIdMap">
-      select *
-      from
-      clinic.item_out_treate
-      join
-      clinic.doctor
-      on
-      item_out_treate.d_id=doctor.d_id
-      <where>
-          item_out_treate.i_id=#{iId}
-          <include refid="descFindByDate"/>
-      </where>
+        select *
+        from
+        clinic.item_out_treate
+        join
+        clinic.doctor
+        on
+        item_out_treate.d_id=doctor.d_id
+        <where>
+            item_out_treate.i_id=#{iId}
+            <include refid="descFindByDate"/>
+        </where>
     </select>
 
-    <!--根据病人id查预约单-->
-    <select id="findOrderByPid" parameterType="int" resultMap="findDoctorsByRIdMap">
+    <!--根据病人id查有效预约单-->
+    <select id="findValidOrderByPid" parameterType="int" resultMap="findDoctorsByRIdMap">
         select *
         from
         patient_order
@@ -72,8 +75,79 @@
         patient_order.i_id=item_out_treate.i_id
         <where>
             p_id=#{pId}
+            and
+            to_days(item_out_treate.i_date) >= to_days(now())
             <include refid="descFindByDate"/>
         </where>
     </select>
 
+
+    <!--根据病人id查无效效预约单-->
+
+    <select id="findInvalidOrderByPid" parameterType="int" resultMap="findDoctorsByRIdMap">
+        select *
+        from
+        patient_order
+        join
+        clinic.doctor
+        join
+        clinic.item_out_treate
+        on
+        item_out_treate.d_id=doctor.d_id and
+        patient_order.i_id=item_out_treate.i_id
+        <where>
+            p_id=#{pId}
+            and
+            to_days(item_out_treate.i_date) &lt; to_days(now())
+            <include refid="descFindByDate"/>
+        </where>
+    </select>
+
+    <!--查黑名单,检查是否是黑名单过期订单是否超过七天成员 ,result为失效订单未超过七天的条数-->
+    <select id="findOldSevenOrder" parameterType="int" resultType="int">
+        select count(*) as total
+        from
+        patient_order join item_out_treate
+        on
+        patient_order.i_id=item_out_treate.i_id
+        where patient_order.p_id=#{value}
+        and o_go=false and to_days(i_date)+7 > to_days(now())
+        and to_days(i_date) &lt; to_days(now())
+    </select>
+
+    <!--检查今日预约次数-->
+    <select id="findOrderCount" resultType="int">
+        select count(*) as total from patient_order
+        where
+        p_id=#{pId}
+        and
+        to_days(o_date) =to_days(now())
+    </select>
+
+    <!--参数为rid，iDate，pId,检查是否已经预约过同一天同一个科室-->
+    <select id="findOrderCountByRoomId" parameterType="MyOrder" resultType="int">
+      select count(*) total from
+      patient_order
+      join
+      item_out_treate  on patient_order.i_id=item_out_treate.i_id
+      join
+     doctor on item_out_treate.d_id = doctor.d_id
+      where
+     patient_order.p_id=#{pId}
+      and
+      to_days(i_date) = to_days(#{iDate})
+      and
+      r_id=#{rId}
+    </select>
+
+    <!--根据出诊信息表,拿到预约的date，拿到科室的id，-->
+    <select id="findDateRidByIid" parameterType="int" resultType="com.zlx.clinic.myentity.MyOrder">
+        select
+         i_date as iDate,r_id as rId
+         from
+        item_out_treate join doctor
+        on
+        item_out_treate.d_id=doctor.d_id
+        where item_out_treate.i_id=#{value}
+    </select>
 </mapper>

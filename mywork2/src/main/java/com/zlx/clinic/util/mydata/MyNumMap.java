@@ -1,7 +1,9 @@
 package com.zlx.clinic.util.mydata;
 
 import com.zlx.clinic.myentity.MyArrange;
+import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -50,13 +52,15 @@ public class MyNumMap {
      * @param rName
      */
     public static MyArrange callNum(String rName,String dId) {
-        MyArrange myArrange = screenShow.get(rName).get(dId).peek();
-        System.out.println("++++++++++++++++++++++");
-        System.out.println();
-        System.out.println();
-        System.out.println("叫号===============>>>" + myArrange.toString());
-        return myArrange;
-
+        if(screenShow.get(rName)!=null){
+            MyArrange myArrange = screenShow.get(rName).get(dId).peek();
+            System.out.println("++++++++++++++++++++++");
+            System.out.println();
+            System.out.println();
+            System.out.println("叫号===============>>>" + myArrange.toString());
+            return myArrange;
+        }
+     return null;
 
     }
 
@@ -64,8 +68,10 @@ public class MyNumMap {
      * 叫号三次，将队列首移动值队列尾
      */
     public static void nextNum(String rName,String dId) {
-        MyArrange poll = screenShow.get(rName).get(dId).poll();
-        screenShow.get(rName).get(dId).offer(poll);
+        if(screenShow.get(rName)!=null){
+            MyArrange poll = screenShow.get(rName).get(dId).poll();
+            screenShow.get(rName).get(dId).offer(poll);
+        }
     }
 
     /**
@@ -74,6 +80,16 @@ public class MyNumMap {
      * @param rName
      */
     public static void removeNum(String rName,String dId) {
-        screenShow.get(rName).get(dId).poll();
+        if(screenShow.get(rName)!=null){
+            screenShow.get(rName).get(dId).poll();
+        }
+
+    }
+
+    @Test
+    public void test1(){
+        HashMap<String,Integer> s=new HashMap<>();
+
+        System.out.println(s.get("room"));
     }
 }

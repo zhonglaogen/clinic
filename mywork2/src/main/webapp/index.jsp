@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-<h2>Hello World!</h2>
+<h2>每人每天可预约两次，同科室可约一次</h2>
 <label>可选的科室有：1,2,3</label>
 <form action="/patient/chooseroom.action" method="get">
     <input type="text" name="rId">

@@ -13,14 +13,17 @@
     <title>Title</title>
 </head>
 <body>
-<table align="2dp" border="2dp">
+未过期
+<hr>
+<table  border="1dp">
     <tr>
         <td>医生</td>
         <td>性别</td>
         <td>出诊日期</td>
+        <td>&nbsp;</td>
         <%--下单时间，订单号--%>
     </tr>
-    <c:forEach items="${orders}" var="mdoctor">
+    <c:forEach items="${validOrders}" var="mdoctor">
         <tr>
             <td>${mdoctor.doctor.dName }</td>
             <td>${mdoctor.doctor.dGender}</td>
@@ -31,12 +34,37 @@
                         <a href="/patient/cancelorder.action?oId=${mdoctor.patientOrder.oId}">取消预约</a>
                     </c:when>
                     <c:otherwise>
-                        已排号或超时未去
+                        已排号
                     </c:otherwise>
                 </c:choose>
             </td>
         </tr>
     </c:forEach>
+
+</table>
+
+<hr>
+已过期
+<table border="1dp">
+    <c:forEach items="${invalidOrders}" var="mdoctor">
+        <tr>
+            <td>${mdoctor.doctor.dName }</td>
+            <td>${mdoctor.doctor.dGender}</td>
+            <td>${mdoctor.itemDate}</td>
+            <td>
+                <c:choose>
+                    <c:when test="${!mdoctor.patientOrder.oGo}">
+                        已失效
+                    </c:when>
+                    <c:otherwise>
+                        已排号
+                    </c:otherwise>
+                </c:choose>
+            </td>
+        </tr>
+    </c:forEach>
+
+
 </table>
 
 </body>

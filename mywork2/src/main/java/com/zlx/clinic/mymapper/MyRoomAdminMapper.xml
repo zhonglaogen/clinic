@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlx.clinic.mymapper.MyRoomAdminMapper">
+
+    <resultMap id="findItemDoctorMap" type="MyDoctorOut">
+        <association property="itemOutTreate" javaType="ItemOutTreate">
+            <id column="i_id" property="iId"></id>
+            <result column="d_id" property="dId"/>
+            <result column="d_count" property="dCount"/>
+            <result column="i_date" property="iDate"/>
+            <result column="i_up_down" property="iUpDown"/>
+        </association>
+        <association property="doctor" javaType="Doctor">
+            <id column="d_id" property="dId"/>
+            <result column="d_name" property="dName"/>
+            <result column="d_gender" property="dGender"/>
+        </association>
+    </resultMap>
+
+    <!--(iDate,iUpDown)查看出诊医师-->
+    <select id="findItemDoctor"  resultType="MyRoomDate" resultMap="findItemDoctorMap">
+      select * from
+      item_out_treate
+      join
+      clinic.doctor
+      on
+      item_out_treate.d_id=doctor.d_id
+      where
+      i_date = #{iDate}
+      and
+      i_up_down=#{iUpDown}
+    </select>
+
+
+
+</mapper>

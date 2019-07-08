@@ -19,19 +19,21 @@
     </style>
 </head>
 <body>
-<table align="2dp" border="2dp">
+<table  border="1dp">
     <tr>
         <td>医生</td>
         <td>性别</td>
         <td>出诊日期</td>
+        <td>出诊时间</td>
         <td>剩余数量</td>
         <td>预约状态</td>
     </tr>
-    <c:forEach items="${doctors}" var="mdoctor">
+    <c:forEach items="${oDoctors}" var="mdoctor">
         <tr>
             <td>${mdoctor.doctor.dName }</td>
             <td>${mdoctor.doctor.dGender}</td>
             <td>${mdoctor.itemDate}</td>
+            <td>${mdoctor.itemOutTreate.iUpDown}</td>
             <td>${mdoctor.itemOutTreate.dCount }</td>
             <td>
                 <c:choose>

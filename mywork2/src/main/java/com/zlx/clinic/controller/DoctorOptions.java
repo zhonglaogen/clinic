@@ -47,7 +47,7 @@ public class DoctorOptions {
         //将医生信息传入service，叫号
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         MyArrange myArrange = doctorService.callNum(doctor);
-        session.setAttribute("myArrange",myArrange);
+        model.addAttribute("myArrange",myArrange);
         return "/WEB-INF/jsp/doctor/dshow";
     }
 
@@ -61,7 +61,6 @@ public class DoctorOptions {
     public String  nextNum(Model model,HttpSession session){
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         doctorService.nextNum(doctor);
-        session.removeAttribute("myArrange");
         return "/WEB-INF/jsp/doctor/dshow";
     }
 
@@ -91,11 +90,9 @@ public class DoctorOptions {
      */
     @RequestMapping(value = "outResult",method = {RequestMethod.GET,RequestMethod.POST})
     public String outResult(HttpSession session,Treat treat){
-        MyArrange myArrange = (MyArrange) session.getAttribute("myArrange");
-        treat.settId(myArrange.getPatientOrder().gettId());
-        doctorService.postTreat(treat,myArrange.getDoctor());
-        //从session中移除此预约排号
-        session.removeAttribute("myArrange");
+        Doctor doctor = (Doctor) session.getAttribute("doctor");
+
+        doctorService.postTreat(treat,doctor);
         return "/WEB-INF/jsp/doctor/dshow";
     }
 

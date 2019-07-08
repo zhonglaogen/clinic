@@ -1,10 +1,16 @@
 package com.zlx.clinic.mymapper;
 
+import com.zlx.clinic.entity.Medicine;
 import com.zlx.clinic.entity.Treat;
 import com.zlx.clinic.myentity.MyArrange;
 import com.zlx.clinic.myentity.MyArrangeMessage;
 
-public interface MyAdminMapper {
+import java.util.List;
+
+/**
+ * 前台导诊
+ */
+public interface MyNumAdminMapper {
 
 
     /**
@@ -22,4 +28,11 @@ public interface MyAdminMapper {
      * @return
      */
     public Integer myInsert(Treat treat)throws Exception;
+
+    /**
+     * 生序查看药品
+     * @return
+     * @throws Exception
+     */
+    public List<Medicine> findMedicineByAsc()throws Exception;
 }

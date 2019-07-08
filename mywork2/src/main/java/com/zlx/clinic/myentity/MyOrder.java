@@ -6,43 +6,54 @@ import java.util.Date;
  * 主要用来包装申请预约的信息
  */
 public class MyOrder {
-    private Integer userID;
-    private Integer doctorID;
+    private Integer pId;
+    //没啥用
+    private Integer dId;
     private Integer  iId;
-    private Integer roomID;
+    //没啥用
+    private Integer rId;
+    //预约当日的date
+    private Date iDate;
 
-
-
-    public MyOrder(Integer userID, Integer doctorID, Integer roomID) {
-        this.userID = userID;
-        this.doctorID = doctorID;
-
-
-        this.roomID = roomID;
+    public Date getiDate() {
+        return iDate;
     }
 
-    public Integer getUserID() {
-        return userID;
+    public void setiDate(Date iDate) {
+        this.iDate = iDate;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
+
+    public MyOrder(Integer pId, Integer dId, Integer rId) {
+        this.pId = pId;
+        this.dId = dId;
+        this.rId = rId;
     }
 
-    public Integer getDoctorID() {
-        return doctorID;
+    public MyOrder(){}
+
+    public Integer getpId() {
+        return pId;
     }
 
-    public void setDoctorID(Integer doctorID) {
-        this.doctorID = doctorID;
+    public void setpId(Integer pId) {
+        this.pId = pId;
     }
 
-    public Integer getRoomID() {
-        return roomID;
+    public Integer getdId() {
+        return dId;
     }
 
-    public void setRoomID(Integer roomID) {
-        this.roomID = roomID;
+    public void setdId(Integer dId) {
+        this.dId = dId;
+    }
+
+    public Integer getrId() {
+        return rId;
+    }
+
+    public void setrId(Integer rId) {
+        this.rId = rId;
     }
 
     public Integer getiId() {

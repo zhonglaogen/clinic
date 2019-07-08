@@ -17,10 +17,10 @@
 <form action="/doctor/outResult.action?">
     诊治结果:<input type="text" name="tResult">
     (诊治结果包含药品信息)
-    治疗方式：<input type="checkbox" name="tType" value="0">修养
+    治疗方式：<input type="radio" name="tType" value="0">修养
     <br>
-    <input type="checkbox" name="tType" value="1">吃药
-    <input type="checkbox" name="tType" value="2">吃药和注射
+    <input type="radio" name="tType" value="1">吃药
+    <input type="radio" name="tType" value="2">吃药和注射
     <br><br>
     <input type="submit">
 </form>
