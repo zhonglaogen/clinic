@@ -162,6 +162,12 @@ public class AdminService {
 
     }
 
+    /**
+     * 通过日期拿医生
+     * @param myRoomDate
+     * @return
+     * @throws Exception
+     */
     public List<MyDoctorOut> getDoctorByDate(MyRoomDate myRoomDate) throws Exception {
       return   myRoomAdminMapper.findItemDoctor(myRoomDate);
     }

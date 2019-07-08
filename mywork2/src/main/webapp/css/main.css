@@ -1,0 +1,164 @@
+*{
+    font-family: "montserrat",sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(100deg, #ffffff, #009fdb);
+    transition: 0.7s; /*过度效果  property duration timing-function delay 默认属性:all 0 ease 0*/
+}
+
+.login-form{
+    margin-top: 15px;
+    color: black;
+    text-align: -webkit-center;
+}
+
+.login-form h1{
+    font-weight: 400;
+    margin-top: 0;
+}
+
+td{
+    width: 100px;
+    height: 50px;
+}
+
+.login-btn{
+    width: 80%;
+    background: #2c3e50;
+    border: 0;
+    color: white;
+    padding: 10px;
+    margin-left: -10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.isize {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+}
+
+.menu li.on a.dbt, .menu li a.dbt:hover {
+    background: #8f402b;
+}
+
+.text-color li a {
+    color: #ffffff;
+}
+
+.navbar-color {
+    background-color: #5f4a47;
+    font-size: 17px;
+}
+
+.navbar-color a {
+!important;
+    color: #000;
+}
+
+.navbar-color a:hover {
+!important;
+    color: #eaa234;
+}
+
+.new-list-item a:hover {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+img, .side-bar .list-group-item, .side-bar-card {
+    border-radius: 3px;
+}
+
+.navbar-centerl {
+    padding-left: 100px;
+}
+
+.navbar-centerl h1 {
+    padding-left: 50px;
+}
+
+.nav1 li a {
+    padding-right: 20px;
+    padding-top: 60px;
+    font-size: 20px;
+}
+
+.navbar-centerl1 {
+    float: right !important;
+    margin-right: 0
+}
+
+.navbar-centerr {
+    float: right !important;
+    margin-right: 60px
+}
+
+.navbar-brand {
+    background-image: url(../img/logo.png);
+    width: 50px;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.side-btn {
+    width: 120px;
+    background: #fff50050;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.side-bar .list-group-item {
+    border: 0;
+    margin-top: 8px;
+    background: #008fff05
+}
+
+.big-screen {
+    margin: 0;
+    padding: 0;
+    /*width: 400px;*/
+    height: 140px;
+    /*background: #00cadb;*/
+}
+
+.divcss {
+    padding-top: 20px;
+    text-indent: 25px
+}
+
+.aaa{
+    margin-left: 200px;
+    margin-top: 15px;
+}
+
+.txtb{
+    box-sizing: border-box;
+    width: 240px;
+    background: rgba(255, 231, 206, 0.61);
+    border: 1px solid #1d1d1d;
+    padding: 10px 20px;
+    color: black;
+    outline: none;
+    margin: 10px 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.left {
+    float: left;
+    width: 500px;
+    height: 100%;
+    margin-left: 150px;
+}
+.right {
+    margin-left: 200px;
+}

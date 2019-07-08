@@ -38,6 +38,7 @@ public class UserOptions {
     @RequestMapping(value = "/userLogin",method = {RequestMethod.GET,RequestMethod.POST})
     public String userLogin(Model model, HttpSession session, @RequestBody Patient patient) throws Exception {
         Patient patient1 = patientService.patientLogin(patient);
+        boolean
         if (patient1!=null) {
 //            将patient信息完整存入session中
             session.setAttribute("patient", patient1);
