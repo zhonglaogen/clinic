@@ -36,16 +36,20 @@ public class UserOptions {
      * @return
      */
     @RequestMapping(value = "/userLogin",method = {RequestMethod.GET,RequestMethod.POST})
-    public String userLogin(Model model, HttpSession session, @RequestBody Patient patient) throws Exception {
+    public @ResponseBody boolean userLogin(Model model, HttpSession session, @RequestBody Patient patient) throws Exception {
         Patient patient1 = patientService.patientLogin(patient);
-        boolean
+        boolean result;
         if (patient1!=null) {
 //            将patient信息完整存入session中
             session.setAttribute("patient", patient1);
-            return "/index";
+            result=true;
+            return result;
+//            return "/index";
         }
         model.addAttribute("result","fail");
-            return "/userlogin";
+        result=false;
+        return result;
+//            return "/userlogin";
     }
 
     /**
