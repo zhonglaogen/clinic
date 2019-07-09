@@ -40,6 +40,9 @@
         </property>
     </bean>
 
+    <!--全局异常处理器-->
+    <!--<bean class="com.zlx.clinic.exception.MyExcetionResolver"></bean>-->
+
 
 
 

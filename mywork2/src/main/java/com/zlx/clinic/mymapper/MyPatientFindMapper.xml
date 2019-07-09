@@ -7,6 +7,7 @@
             <id column="i_id" property="iId"></id>
             <result column="d_id" property="dId"/>
             <result column="d_count" property="dCount"/>
+            <result column="d_all_count" property="dAllCount"/>
             <result column="i_date" property="iDate"/>
             <result column="i_up_down" property="iUpDown"/>
         </association>

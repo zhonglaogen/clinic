@@ -13,6 +13,9 @@ import com.zlx.clinic.util.MyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.print.Doc;
+import javax.servlet.http.HttpSession;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,6 +37,8 @@ public class AdminService {
     private MedicineMapper medicineMapper;
     @Autowired
     private MyRoomAdminMapper myRoomAdminMapper;
+    @Autowired
+    private ItemOutTreateMapper itemOutTreateMapper;
 
 
     /**
@@ -163,12 +168,63 @@ public class AdminService {
     }
 
     /**
-     * 通过日期拿医生
+     * 通过日期拿出诊医生
      * @param myRoomDate
      * @return
      * @throws Exception
      */
-    public List<MyDoctorOut> getDoctorByDate(MyRoomDate myRoomDate) throws Exception {
+    public List<MyDoctorOut> getDoctorByDate(MyRoomDate myRoomDate,Admin admin) throws Exception {
+        //获取管理员所管理科室
+
+        Room room=this.getRoomByAdmin(admin);
+        myRoomDate.setrId(room.getrId());
+
       return   myRoomAdminMapper.findItemDoctor(myRoomDate);
+    }
+
+    /**
+     * 获取为出诊当前科室医生
+     * @param myRoomDate
+     * @param admin
+     * @return
+     */
+    public List<Doctor> getNotOutDoctor(MyRoomDate myRoomDate,Admin admin) throws Exception {
+        Room room = this.getRoomByAdmin(admin);
+        myRoomDate.setrId(room.getrId());
+        List<Doctor> dcotorByNoOut = myRoomAdminMapper.findDcotorByNoOut(myRoomDate);
+        return dcotorByNoOut;
+
+    }
+
+    public Room getRoomByAdmin(Admin admin){
+        //获取管理员所管理科室
+        RoomExample roomExample = new RoomExample();
+        RoomExample.Criteria criteria = roomExample.createCriteria();
+        criteria.andDIdEqualTo(admin.getaId());
+        List<Room> rooms=roomMapper.selectByExample(roomExample);
+        return rooms.get(0);
+    }
+    //添加出诊信息
+    public void addOutTreat(ItemOutTreate itemOutTreate,MyRoomDate myRoomDate) throws ParseException {
+        Date date = MyUtil.changeDate(myRoomDate.getiDate());
+        //设置时间
+        itemOutTreate.setiDate(date);
+        itemOutTreate.setiUpDown(myRoomDate.getiUpDown());
+        //设置剩余预约数目
+        itemOutTreate.setdCount(itemOutTreate.getdAllCount());
+        itemOutTreateMapper.insert(itemOutTreate);
+
+    }
+    //增加可预约人数
+    public void addOutCount(ItemOutTreate itemOutTreate){
+        ItemOutTreate itemOutTreate1 = itemOutTreateMapper.selectByPrimaryKey(itemOutTreate.getiId());
+        int allCount=itemOutTreate1.getdAllCount()+itemOutTreate.getdAllCount();
+        int count=itemOutTreate1.getdCount()+itemOutTreate.getdAllCount();
+        //设置总数目和剩余数目
+        itemOutTreate1.setdCount(allCount);
+        itemOutTreate1.setdAllCount(count);
+        //更新
+        itemOutTreateMapper.updateByPrimaryKeySelective(itemOutTreate1);
+
     }
 }

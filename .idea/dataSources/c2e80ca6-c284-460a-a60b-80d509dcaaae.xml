@@ -1027,6 +1027,7 @@
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="256" parent="233" name="d_gender">
       <Position>4</Position>
@@ -1049,6 +1050,7 @@
       <Position>7</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="260" parent="233" name="d_range">
       <Position>8</Position>
@@ -1291,8 +1293,9 @@
     </column>
     <column id="305" parent="239" name="p_gender">
       <Position>4</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>varchar(2)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="306" parent="239" name="p_birthdate">
       <Position>5</Position>
@@ -1397,6 +1400,7 @@
       <Position>2</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="326" parent="241" name="a_id">
       <Position>3</Position>

@@ -7,6 +7,7 @@
             <id column="i_id" property="iId"></id>
             <result column="d_id" property="dId"/>
             <result column="d_count" property="dCount"/>
+            <result column="d_all_count" property="dAllCount"/>
             <result column="i_date" property="iDate"/>
             <result column="i_up_down" property="iUpDown"/>
         </association>
@@ -17,7 +18,26 @@
         </association>
     </resultMap>
 
-    <!--(iDate,iUpDown)查看出诊医师-->
+    <resultMap id="findDcotorByNoOutMap" type="Doctor">
+        <id column="d_id" property="dId"/>
+        <result column="d_name" property="dName"/>
+        <result column="d_phone" property="dPhone"/>
+        <result column="d_work_name" property="dWorkName"/>
+        <result column="r_room" property="rRoom"/>
+
+
+    </resultMap>
+
+
+    <sql id="findDoctorByRoomDate">
+      i_date = #{iDate}
+      and
+      i_up_down=#{iUpDown}
+      and
+      r_id=#{rId}
+    </sql>
+
+    <!--本科室(iDate,iUpDown)查看出诊医师-->
     <select id="findItemDoctor"  resultType="MyRoomDate" resultMap="findItemDoctorMap">
       select * from
       item_out_treate
@@ -26,9 +46,18 @@
       on
       item_out_treate.d_id=doctor.d_id
       where
-      i_date = #{iDate}
-      and
-      i_up_down=#{iUpDown}
+      <include refid="findDoctorByRoomDate"></include>
+    </select>
+
+    <select id="findDcotorByNoOut" resultType="MyRoomDate" resultMap="findDcotorByNoOutMap">
+        select * from clinic.doctor
+        where
+        r_id=#{rId}
+        and
+        d_id not in (select d_id from clinic.item_out_treate
+         where
+        <include refid="findDoctorByRoomDate"></include>
+        )
     </select>
 
 
