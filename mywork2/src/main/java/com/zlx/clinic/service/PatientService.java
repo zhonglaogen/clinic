@@ -5,6 +5,7 @@ import com.zlx.clinic.mapper.*;
 import com.zlx.clinic.myentity.MyDoctorOut;
 import com.zlx.clinic.myentity.MyOrder;
 import com.zlx.clinic.mymapper.MyPatientFindMapper;
+import com.zlx.clinic.util.Mail;
 import com.zlx.clinic.util.MyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -104,6 +105,15 @@ public class PatientService {
                 o1.setoDate(new Date());
                 o1.setoGo(false);
                 orderMapper.insert(o1);
+                //获取邮箱
+                Patient patient = patientMapper.selectByPrimaryKey(myOrder.getpId());
+                //发送邮件
+                Mail.qqSendMail("603943860@qq.com",
+                        "jkrouwkwpbazbajj",
+                        "smtp.qq.com",
+                        patient.getpEmail(),
+                        "预约成功，请及时排号就诊"
+                        );
                 return true;
             } else {
                 //预约人数以满

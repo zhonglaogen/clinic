@@ -36,20 +36,20 @@ public class UserOptions {
      * @return
      */
     @RequestMapping(value = "/userLogin",method = {RequestMethod.GET,RequestMethod.POST})
-    public @ResponseBody boolean userLogin(Model model, HttpSession session, @RequestBody Patient patient) throws Exception {
+    public  String  userLogin(Model model, HttpSession session,  Patient patient) throws Exception {
         Patient patient1 = patientService.patientLogin(patient);
         boolean result;
         if (patient1!=null) {
 //            将patient信息完整存入session中
             session.setAttribute("patient", patient1);
             result=true;
-            return result;
-//            return "/index";
+//            return result;
+            return "/index";
         }
         model.addAttribute("result","fail");
         result=false;
-        return result;
-//            return "/userlogin";
+//        return result;
+            return "/userlogin";
     }
 
     /**
@@ -60,9 +60,9 @@ public class UserOptions {
      * @return
      */
     @RequestMapping(value = "/chooseroom",method = {RequestMethod.GET,RequestMethod.POST})
-    public String chooseRoom(HttpSession session, int rId) throws Exception {
+    public String chooseRoom(Model model, int rId) throws Exception {
         List<MyDoctorOut> doctors = patientService.findDoctorByRID(rId);
-        session.setAttribute("doctors", doctors);
+        model.addAttribute("oDoctors", doctors);
         return "/WEB-INF/jsp/patient/doctor";
     }
 
@@ -94,12 +94,12 @@ public class UserOptions {
      * @return
      */
     @RequestMapping(value = "/showapply",method = {RequestMethod.GET,RequestMethod.POST})
-    public String showApply(HttpSession session, ModelAndView modelAndView) throws Exception {
+    public String showApply(HttpSession session, Model model) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         List<MyDoctorOut>  validOrders= patientService.findValidOrderByPid(patient.getpId());
         List<MyDoctorOut> invalidOrders = patientService.findInvalidOrderByPid(patient.getpId());
-        session.setAttribute("validOrders", validOrders);
-        session.setAttribute("invalidOrders", invalidOrders);
+        model.addAttribute("validOrders", validOrders);
+        model.addAttribute("invalidOrders", invalidOrders);
         return "/WEB-INF/jsp/patient/showorder";
     }
 

@@ -124,7 +124,7 @@ public class AdminOptions {
         adminService.addOutCount(itemOutTreate);
         System.out.println(itemOutTreate.getdAllCount());
         System.out.println(itemOutTreate);
-        return null;
+        return "/WEB-INF/jsp/admin/room/showMessage";
     }
 
 
@@ -137,7 +137,7 @@ public class AdminOptions {
         MyRoomDate myRoomDate = (MyRoomDate) session.getAttribute("myRoomDate");
        //将日期传入service
         adminService.addOutTreat(itemOutTreate,myRoomDate);
-        return null;
+        return "/WEB-INF/jsp/admin/room/showMessage";
     }
 
 

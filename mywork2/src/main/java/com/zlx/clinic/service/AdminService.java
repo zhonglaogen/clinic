@@ -1,6 +1,7 @@
 package com.zlx.clinic.service;
 
 import com.zlx.clinic.entity.*;
+import com.zlx.clinic.exception.MyException;
 import com.zlx.clinic.mapper.*;
 import com.zlx.clinic.myentity.MyArrange;
 import com.zlx.clinic.myentity.MyArrangeMessage;
@@ -76,6 +77,9 @@ public class AdminService {
      * @return
      */
     public boolean arrangeQueue(String phone, Admin admin) throws Exception {
+        if(admin==null){
+            throw new MyException("未登录");
+        }
         // 当前日期
         String date = MyUtil.changeDate(new Date());
         //获取管理员所管理科室
@@ -174,6 +178,9 @@ public class AdminService {
      * @throws Exception
      */
     public List<MyDoctorOut> getDoctorByDate(MyRoomDate myRoomDate,Admin admin) throws Exception {
+        if(admin==null){
+            throw new MyException("未登录");
+        }
         //获取管理员所管理科室
 
         Room room=this.getRoomByAdmin(admin);
@@ -189,6 +196,9 @@ public class AdminService {
      * @return
      */
     public List<Doctor> getNotOutDoctor(MyRoomDate myRoomDate,Admin admin) throws Exception {
+        if(admin==null){
+            throw new MyException("未登录");
+        }
         Room room = this.getRoomByAdmin(admin);
         myRoomDate.setrId(room.getrId());
         List<Doctor> dcotorByNoOut = myRoomAdminMapper.findDcotorByNoOut(myRoomDate);
@@ -196,7 +206,10 @@ public class AdminService {
 
     }
 
-    public Room getRoomByAdmin(Admin admin){
+    public Room getRoomByAdmin(Admin admin)throws Exception{
+        if(admin==null){
+            throw new MyException("未登录");
+        }
         //获取管理员所管理科室
         RoomExample roomExample = new RoomExample();
         RoomExample.Criteria criteria = roomExample.createCriteria();

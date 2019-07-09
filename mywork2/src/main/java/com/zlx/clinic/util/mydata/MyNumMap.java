@@ -53,12 +53,14 @@ public class MyNumMap {
      */
     public static MyArrange callNum(String rName,String dId) {
         if(screenShow.get(rName)!=null){
-            MyArrange myArrange = screenShow.get(rName).get(dId).peek();
-            System.out.println("++++++++++++++++++++++");
-            System.out.println();
-            System.out.println();
-            System.out.println("叫号===============>>>" + myArrange.toString());
-            return myArrange;
+            if(screenShow.get(rName).get(dId)!=null){
+                MyArrange myArrange = screenShow.get(rName).get(dId).peek();
+                System.out.println("++++++++++++++++++++++");
+                System.out.println();
+                System.out.println();
+                System.out.println("叫号===============>>>" + myArrange.toString());
+                return myArrange;
+            }
         }
      return null;
 
@@ -69,8 +71,10 @@ public class MyNumMap {
      */
     public static void nextNum(String rName,String dId) {
         if(screenShow.get(rName)!=null){
-            MyArrange poll = screenShow.get(rName).get(dId).poll();
-            screenShow.get(rName).get(dId).offer(poll);
+            if(screenShow.get(rName).get(dId)!=null){
+                MyArrange poll = screenShow.get(rName).get(dId).poll();
+                screenShow.get(rName).get(dId).offer(poll);
+            }
         }
     }
 
@@ -81,7 +85,9 @@ public class MyNumMap {
      */
     public static void removeNum(String rName,String dId) {
         if(screenShow.get(rName)!=null){
-            screenShow.get(rName).get(dId).poll();
+            if(screenShow.get(rName).get(dId)!=null){
+                screenShow.get(rName).get(dId).poll();
+            }
         }
 
     }
@@ -91,5 +97,23 @@ public class MyNumMap {
         HashMap<String,Integer> s=new HashMap<>();
 
         System.out.println(s.get("room"));
+    }
+
+
+    /**
+     * 将队列中的数据转换为数组
+     * @param rName
+     * @param dId
+     * @return
+     */
+    public static MyArrange[] getArrange(String rName,String dId){
+        MyArrange[] myArranges=null;
+        if(screenShow.get(rName)!=null){
+            LinkedBlockingDeque<MyArrange> myArrangesQueue = screenShow.get(rName).get(dId);
+            if(myArrangesQueue!=null){
+                myArranges = (MyArrange[]) myArrangesQueue.toArray();
+            }
+        }
+        return myArranges;
     }
 }

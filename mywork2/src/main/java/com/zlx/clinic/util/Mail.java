@@ -18,7 +18,7 @@ public class Mail {
 
     public static void main(String args[]) {
         qqSendMail("603943860@qq.com", "jkrouwkwpbazbajj", "smtp.qq.com",
-                "479230207@qq.com");
+                "479230207@qq.com","hello");
 
 //        foxmailSendMail("发件邮箱", "密码",
 //                "邮件服务器", "收件人邮箱");
@@ -85,8 +85,7 @@ public class Mail {
      * @return 收件人邮箱+验证码
      */
     public static String qqSendMail(String fromMail, String fromPwd,
-                                    String mailServicer, String toMail) {
-        String code = createCode();
+                                    String mailServicer, String toMail,String code) {
         StringBuffer st = new StringBuffer();
         Properties props = new Properties();
         // 开启debug调试
@@ -144,5 +143,19 @@ public class Mail {
 
         }
       return fourRandom;
+    }
+
+    /**
+     * 预约成功
+     * @param fromMail
+     * @param fromPwd
+     * @param mailServicer
+     * @param toMail
+     * @param message
+     */
+    public static void sendApply(String fromMail, String fromPwd,
+                                 String mailServicer, String toMail,String message){
+        String code = message;
+        qqSendMail(fromMail,fromPwd,mailServicer,toMail,code);
     }
 }
