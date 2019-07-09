@@ -2,6 +2,7 @@ package com.zlx.clinic.controller;
 
 import com.zlx.clinic.entity.Doctor;
 import com.zlx.clinic.entity.Treat;
+import com.zlx.clinic.exception.MyException;
 import com.zlx.clinic.myentity.MyArrange;
 import com.zlx.clinic.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +44,12 @@ public class DoctorOptions {
      * @param session
      */
     @RequestMapping(value = "callNum",method = {RequestMethod.GET,RequestMethod.POST})
-    public String callNum(Model model,HttpSession session){
+    public String callNum(Model model,HttpSession session) throws MyException {
         //将医生信息传入service，叫号
         Doctor doctor = (Doctor) session.getAttribute("doctor");
+        if (doctor == null) {
+            throw new MyException("未登录");
+        }
         MyArrange myArrange = doctorService.callNum(doctor);
         model.addAttribute("myArrange",myArrange);
         return "/WEB-INF/jsp/doctor/dshow";
@@ -58,8 +62,11 @@ public class DoctorOptions {
      * @return
      */
     @RequestMapping(value = "nextNum",method = {RequestMethod.GET,RequestMethod.POST})
-    public String  nextNum(Model model,HttpSession session){
+    public String  nextNum(Model model,HttpSession session) throws MyException {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
+        if (doctor == null) {
+            throw new MyException("未登录");
+        }
         doctorService.nextNum(doctor);
         return "/WEB-INF/jsp/doctor/dshow";
     }
@@ -71,8 +78,12 @@ public class DoctorOptions {
      * @return
      */
     @RequestMapping(value = "showTreat",method = {RequestMethod.GET,RequestMethod.POST})
-    public String showTreat(Model model,HttpSession session){
-        MyArrange myArrange = (MyArrange) session.getAttribute("myArrange");
+    public String showTreat(Model model,HttpSession session) throws MyException {
+        Doctor doctor = (Doctor) session.getAttribute("doctor");
+        if (doctor == null) {
+        throw new MyException("未登录");
+        }
+        MyArrange myArrange = doctorService.callNum(doctor);
         if(myArrange!=null){
 //            Treat treat = doctorService.getTreat(myArrange);
 //            session.setAttribute("treat",treat);
@@ -89,9 +100,11 @@ public class DoctorOptions {
      * @return
      */
     @RequestMapping(value = "outResult",method = {RequestMethod.GET,RequestMethod.POST})
-    public String outResult(HttpSession session,Treat treat){
+    public String outResult(HttpSession session,Treat treat) throws MyException {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
-
+        if (doctor == null) {
+            throw new MyException("未登录");
+        }
         doctorService.postTreat(treat,doctor);
         return "/WEB-INF/jsp/doctor/dshow";
     }

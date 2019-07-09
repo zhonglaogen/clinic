@@ -15,12 +15,18 @@
             <id column="d_id" property="dId"/>
             <result column="d_name" property="dName"/>
             <result column="d_gender" property="dGender"/>
+            <result column="d_phone" property="dPhone"/>
+            <result column="d_work_name" property="dWorkName"/>
+            <result column="d_img" property="dImg"/>
+            <result column="r_id" property="rId"/>
         </association>
         <association property="patientOrder" javaType="PatientOrder">
             <id column="o_id" property="oId"/>
+            <result column="p_id" property="pId"/>
             <result column="i_id" property="iId"/>
-            <result column="o_go" property="oGo"/>
             <result column="o_date" property="oDate"/>
+            <result column="o_go" property="oGo"/>
+            <result column="t_id" property="tId"/>
         </association>
     </resultMap>
     <sql id="descFindByDate">

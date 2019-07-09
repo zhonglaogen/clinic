@@ -116,4 +116,10 @@ public class MyNumMap {
         }
         return myArranges;
     }
+
+    public static ConcurrentHashMap<String, LinkedBlockingDeque<MyArrange>> getArrange(String rName) {
+        return screenShow.get(rName);
+
+    }
+
 }

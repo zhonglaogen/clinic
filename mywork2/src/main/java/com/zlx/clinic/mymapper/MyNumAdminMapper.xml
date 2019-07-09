@@ -15,12 +15,19 @@
         <association property="doctor" javaType="Doctor">
             <id column="d_id" property="dId"/>
             <result column="d_name" property="dName"/>
+            <result column="d_gender" property="dGender"/>
+            <result column="d_phone" property="dPhone"/>
+            <result column="d_work_name" property="dWorkName"/>
+            <result column="d_img" property="dImg"/>
             <result column="r_id" property="rId"/>
         </association>
         <association property="patient" javaType="Patient">
             <id column="p_id" property="pId"/>
             <result column="p_name" property="pName"/>
+            <result column="p_gender" property="pGender"/>
             <result column="p_phone" property="pPhone"/>
+            <result column="p_email" property="pEmail"/>
+            <result column="p_idcard" property="pIdcard"/>
 
         </association>
     </resultMap>

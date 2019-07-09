@@ -2,6 +2,7 @@ package com.zlx.clinic.controller;
 
 import com.zlx.clinic.entity.Patient;
 import com.zlx.clinic.entity.PatientOrder;
+import com.zlx.clinic.exception.MyException;
 import com.zlx.clinic.myentity.MyDoctorOut;
 import com.zlx.clinic.myentity.MyOrder;
 import com.zlx.clinic.myentity.MyRoomDate;
@@ -76,6 +77,9 @@ public class UserOptions {
     @RequestMapping(value = "/apply",method = {RequestMethod.GET,RequestMethod.POST})
     public String userApply(HttpSession session, MyOrder myOrder) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
+        if(patient==null){
+            throw new MyException("未登录");
+        }
         myOrder.setpId(patient.getpId());
         System.out.println("+++++++++++++++++=" + myOrder.getdId());
         boolean b = patientService.patientApply(myOrder);
@@ -96,6 +100,9 @@ public class UserOptions {
     @RequestMapping(value = "/showapply",method = {RequestMethod.GET,RequestMethod.POST})
     public String showApply(HttpSession session, Model model) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
+        if(patient==null){
+            throw new MyException("未登录");
+        }
         List<MyDoctorOut>  validOrders= patientService.findValidOrderByPid(patient.getpId());
         List<MyDoctorOut> invalidOrders = patientService.findInvalidOrderByPid(patient.getpId());
         model.addAttribute("validOrders", validOrders);
@@ -111,7 +118,11 @@ public class UserOptions {
      * @throws Exception
      */
     @RequestMapping(value = "/cancelorder",method = {RequestMethod.GET,RequestMethod.POST})
-    public String cancleOrder(PatientOrder patientOrder) throws Exception {
+    public String cancleOrder(HttpSession session,PatientOrder patientOrder) throws Exception {
+        Patient patient = (Patient) session.getAttribute("patient");
+        if(patient==null){
+            throw new MyException("未登录");
+        }
         if (patientService.deleteOrder(patientOrder)) {
             return "/WEB-INF/jsp/patient/apply";
         } else {

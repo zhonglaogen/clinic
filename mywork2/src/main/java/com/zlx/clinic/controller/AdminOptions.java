@@ -1,6 +1,7 @@
 package com.zlx.clinic.controller;
 
 import com.zlx.clinic.entity.*;
+import com.zlx.clinic.exception.MyException;
 import com.zlx.clinic.myentity.MyDoctorOut;
 import com.zlx.clinic.myentity.MyRoomDate;
 import com.zlx.clinic.service.AdminService;
@@ -67,7 +68,7 @@ public class AdminOptions {
         return "/adminlogin";
     }
 
-    /**
+    /** 导诊排号
      * @param model       排号结果
      * @param httpSession 导诊自身信息，获取科室名
      * @param phone       查询是否有此人
@@ -79,7 +80,9 @@ public class AdminOptions {
     @RequestMapping(value = "/arrange", method = {RequestMethod.GET, RequestMethod.POST})
     public String arrange(Model model, HttpSession httpSession, @RequestParam(value = "aPhone", required = true) String phone) throws Exception {
         Admin arrangeUser = (Admin) httpSession.getAttribute("arrangeAdmin");
-
+        if(arrangeUser==null){
+            throw new MyException("未登录");
+        }
         //将科室管理员和手机号传入service
         if (adminService.arrangeQueue(phone, arrangeUser)) {
             //安排成功
@@ -93,7 +96,7 @@ public class AdminOptions {
     }
 
 
-    /**本科室
+    /**科室管理员
      * 根据前段传的date和上午下午找到出诊信息
      *
      * @param model
@@ -104,6 +107,9 @@ public class AdminOptions {
     @RequestMapping(value = "showDoctor", method = {RequestMethod.GET, RequestMethod.POST})
     public String showDoctor(Model model,HttpSession session, MyRoomDate myRoomDate) throws Exception {
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
+        if(roomAdmin==null){
+            throw new MyException("未登录");
+        }
         session.setAttribute("myRoomDate",myRoomDate);
         List<MyDoctorOut> outDoctors = adminService.getDoctorByDate(myRoomDate,roomAdmin);
         List<Doctor> notOutDoctor = adminService.getNotOutDoctor(myRoomDate, roomAdmin);
@@ -114,13 +120,24 @@ public class AdminOptions {
         return "/WEB-INF/jsp/admin/room/showMessage";
     }
 
+
     /**
+     * ！！！！！！！！！！不返回页面
+     */
+
+
+    /** 科室管理员
      * 添加可预约数目
      * @param itemOutTreate iId dAllCount(增加的数目)
      * @return
      */
     @RequestMapping(value = "addCount",method = {RequestMethod.GET,RequestMethod.POST})
-    public String  addCount(ItemOutTreate itemOutTreate){
+    public String  addCount(HttpSession session,ItemOutTreate itemOutTreate) throws Exception {
+        Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
+        if(roomAdmin==null){
+            throw new MyException("未登录");
+        }
+
         adminService.addOutCount(itemOutTreate);
         System.out.println(itemOutTreate.getdAllCount());
         System.out.println(itemOutTreate);
@@ -128,12 +145,16 @@ public class AdminOptions {
     }
 
 
-    /**
+    /** 科室管理员
      * 添加出诊信息
      * @param itemOutTreate 包含医生id 和预约数目
      */
     @RequestMapping(value = "addOutTreat",method = {RequestMethod.GET,RequestMethod.POST})
-    public String addOutTreat(HttpSession session,ItemOutTreate itemOutTreate) throws ParseException {
+    public String addOutTreat(HttpSession session,ItemOutTreate itemOutTreate) throws Exception{
+        Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
+        if(roomAdmin==null){
+            throw new MyException("未登录");
+        }
         MyRoomDate myRoomDate = (MyRoomDate) session.getAttribute("myRoomDate");
        //将日期传入service
         adminService.addOutTreat(itemOutTreate,myRoomDate);
