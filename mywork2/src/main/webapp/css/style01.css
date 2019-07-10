@@ -11,7 +11,7 @@ body{
     top: 0;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(45deg,#9fbaa8,#31354c);
+    background-image: linear-gradient(45deg,#9fbaa8, #5aff57);
     transition: 0.4s; /*过度效果  property duration timing-function delay 默认属性:all 0 ease 0*/
 }
 .login-form{
@@ -31,7 +31,7 @@ body{
      box-sizing: border-box;
      width: 240px;
      background: #ffffff28;
-     border: 1px solid white;
+     border: 1px solid #0b0b0b;
      padding: 10px 20px;
      color: white;
      outline: none;
@@ -41,7 +41,7 @@ body{
  }
 .login-btn{
     width: 240px;
-    background: #2c3e50;
+    background: #473550;
     border: 0;
     color: white;
     padding: 10px;

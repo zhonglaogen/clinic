@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/puyuan.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tools.js"></script>
+</head>
+<body>
+<br/><br/>
+<!--标题-->
+<div class="navbar-centerl">
+    <img class="isize" src="img/logo.png" style="display:inline">
+    <h1 style="display:inline">何庄子管理员系统</h1>
+</div>
+<br/><br/>
+<!--导航栏-->
+<div class="menuk">
+    <ul class="menu">
+        <ul class="navbar-centerl1">
+            <li><a href="d_login.html" class="dbt">登录</a></li>
+        </ul>
+    </ul>
+    <div class="clear"></div>
+</div>
+<!--巨幕-->
+<div class="jumbotron big-screen">
+    <img src="img/eyes.jpg">
+</div>
+<!--内容-->
+<div class="container">
+    <div class="row">
+        <!--使导航栏与下方文本对齐-->
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 divcss">
+            <br/><br/>
+            <form class="login-form" action="#" method="post">
+                <h2 style="margin-left: -20px">已出诊医生</h2><br/>
+                <table id="table01" width="700px" border="1">
+                    <tr>
+                        <td>医生ID</td>
+                        <td>姓名</td>
+                        <td>预约名额</td>
+                        <td>剩余名额</td>
+                        <td>出诊时间</td>
+                        <td>添加名额</td>
+                        <td>修改</td>
+                    </tr>
+                </table><br/><br/>
+                <h2>医生出诊安排</h2><br/>
+                <table id="table02" width="400px" border="1">
+                    <tr>
+                        <td>医生ID</td>
+                        <td>姓名</td>
+                        <td>预约名额</td>
+                        <td>提交</td>
+                    </tr>
+                </table>
+            </form>
+            <br/><br/><br/><br/>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<!--网页底部-->
+<br/><br/>
+<div class="foot1">
+    <div class="main">
+        <i></i>
+        <div class="d1">
+            <div class="bt1"><span class="s1">联系方式</span></div>
+            <div class="lx_nr">
+                <ul>
+                    <li>地址：xxxxxxxxxxxxxxxxxxxxx</li>
+                    <li>邮编：000000</li>
+                    <li>电话：0022-00009999</li>
+                    <li>传真：0224-00009999</li>
+                    <li>Email：<a href="mailto:szwkyy@gmail.com">333@gmail.com</a></li>
+                </ul>
+
+            </div>
+            <ul class="lb_wx">
+                <li style="margin-right: 10px;"><img src="/img/em_wx2.jpg">
+                    <p>ym</p></li>
+                <li style="margin-right: 10px;"><img src="/img/em_xl2.jpg">
+                    <p>zlx</p></li>
+                <li style="margin-right: 10px;"><img src="/img/em_fyapp.png">
+                    <p>zzj</p></li>
+            </ul>
+        </div>
+        <div class="d2">
+            <div class="bt1"><span class="s1">333专区</span></div>
+            <ul class="lm1">
+                <li><a class="cd_z1" target="_blank"><span>ym</span></a></li>
+                <li><a class="cd_z1" target="_blank"><span>zlx</span></a></li>
+                <li><a class="cd_z1" target="_blank"><span>zzj</span></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="foot2">
+    <div class="main">
+        <ul class="cd_f1">
+        </ul>
+        <span class="s2 dbt"><a target="_blank"
+                                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33030202000591"><img
+                src="/img/ba_03.png"/><p>天津公网安备 7e333666号</p></a></span>
+        <span class="s1">版权所有：7E333<br>  Copyright &copy; 2017 Wenzhou DongHua Hospital</span>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function btnclick() {
+        var table01 = document.getElementById("table01");
+        var table02 = document.getElementById("table02");
+        var btn01 = table01.getElementsByTagName("input");
+        var btn02 = table02.getElementsByTagName("input");
+        // console.log(btn01);
+        for (var j = 1; j < btn01.length; j = j + 2) {
+            btn01[j].index=j;
+            var result = btn01[j-1].innerHTML;
+            btn01[j].onclick = function () {
+                var result = this.parentNode.parentNode.getElementsByTagName("input")[0];
+                // console.log(result.value);
+                $.ajax({
+                    url: "${pageContext.request.contextPath}/demo",
+                    contentType: "application/json;charset-UTF-8",
+                    data: JSON.stringify({result: result}),
+                    type: "POST",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+        }
+        for (var j = 1; j < btn02.length; j = j + 2) {
+            btn02[j].index=j;
+            var result = btn02[j-1].innerHTML;
+            btn02[j].onclick = function () {
+                var result = this.parentNode.parentNode.getElementsByTagName("input")[0];
+                // console.log(result.value);
+                $.ajax({
+                    url: "${pageContext.request.contextPath}/demo",
+                    contentType: "application/json;charset-UTF-8",
+                    data: JSON.stringify({result: result}),
+                    type: "POST",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+        }
+
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "${pageContext.request.contextPath}/result",
+            contentType: "application/json;charset-UTF-8",
+            type: "POST",
+            success: function (data) {
+                var table = document.getElementById("table");
+                for (var i = 0; i < data.length; i++) {
+                    var row = table.insertRow(table.rows.length);
+                    var c1 = row.insertCell(0);
+                    c1.innerHTML = data[i].BrandName;
+                    var c2 = row.insertCell(1);
+                    c2.innerHTML = '<input type="button" value="上午" class="login-btn">';
+                    var c3 = row.insertCell(2);
+                    c3.innerHTML = '<input type="button" value="下午" class="login-btn">';
+                }
+                btnclick();
+            }
+        });
+
+        var data00 = [{
+            "BrandName": "ACES",
+            "Modul": "91906",
+            "Quantity": "18",
+            "BrandName1": "ACES",
+            "Modul1": "aaa",
+            "Quantity1": "18"
+        },
+            {
+                "BrandName": "ADI",
+                "Modul": "REEL",
+                "Quantity": "20",
+                "BrandName1": "ACES",
+                "Modul1": "91906",
+                "Quantity1": "18"
+            },
+            {
+                "BrandName": "ADI",
+                "Modul": "REEL7",
+                "Quantity": "0",
+                "BrandName1": "ACES",
+                "Modul1": "91906",
+                "Quantity1": "18"
+            }];
+        var table01 = document.getElementById("table01");
+        for (var i = 0; i < data00.length; i++) {
+            var row0 = table01.insertRow(table01.rows.length);
+            var c1 = row0.insertCell(0);
+            c1.innerHTML = data00[i].BrandName;
+            var c2 = row0.insertCell(1);
+            c2.innerHTML = data00[i].Modul;
+            var c3 = row0.insertCell(2);
+            c3.innerHTML = data00[i].Quantity;
+            var c4 = row0.insertCell(3);
+            c4.innerHTML = data00[i].BrandName1;
+            var c5 = row0.insertCell(4);
+            c5.innerHTML = data00[i].Modul1;
+            var c6 = row0.insertCell(5);
+            c6.innerHTML = '<input type="text" class="txtb" style="width: 70px">';
+            var c7 = row0.insertCell(6);
+            c7.innerHTML = '<input type="button" value="提交" class="login-btn">';
+        }
+
+        var data01 = [{"BrandName": "ACES", "Modul": "91906", "Quantity": "18"},
+            {"BrandName": "ADI", "Modul": "REEL", "Quantity": "20"},
+            {"BrandName": "ADI", "Modul": "REEL7", "Quantity": "0"}];
+        var table02 = document.getElementById("table02");
+        for (var i = 0; i < data01.length; i++) {
+            var row = table02.insertRow(table02.rows.length);
+            var c1 = row.insertCell(0);
+            c1.innerHTML = data01[i].BrandName;
+            var c2 = row.insertCell(1);
+            c2.innerHTML = data01[i].Modul;
+            var c3 = row.insertCell(2);
+            c3.innerHTML = '<input type="text" class="txtb" style="width: 70px">';
+            var c4 = row.insertCell(3);
+            c4.innerHTML = '<input type="button" value="提交" class="login-btn">';
+        }
+        btnclick();
+    });
+</script>
+</html>

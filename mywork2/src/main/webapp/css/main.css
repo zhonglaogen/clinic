@@ -162,3 +162,16 @@ img, .side-bar .list-group-item, .side-bar-card {
 .right {
     margin-left: 200px;
 }
+.tdheight{
+    height: 150px;
+}
+.inputtxt{
+    height:140px;
+    width: 550px;
+    color: #0b0b0b;
+    font-size: 15px;
+}
+.medicine tr td{
+    height:30px;
+    width:550px;
+}

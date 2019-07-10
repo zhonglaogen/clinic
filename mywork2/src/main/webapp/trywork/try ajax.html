@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/tools.js"></script>
+</head>
+<body>
+<!--内容-->
+<div class="container">
+    <div class="row">
+        <!--使导航栏与下方文本对齐-->
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 divcss">
+            <br/><br/><br/>
+            <div>
+                <form class="login-form" action="#" method="post">
+                    <br/><br/>
+                    <table id="table" width="550px" border="1">
+                        <tr>
+                            <td colspan="6" id="medicine">药品选择：<br/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <input id="btn" class="login-btn" type="button" name="" style="width: 200px;margin-left:150px" value="确定">
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                </form>
+            </div>
+            <br/><br/><br/><br/>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function newline(){
+        var taVal = document.getElementById('ta').value;
+        if(taVal != null && taVal.length > 0){
+            var len = Number(taVal.length);
+            if(len%10 == 0) {
+                document.getElementById('ta').value = document.getElementById('ta').value + "\n";
+            }
+        }
+    }
+    $.ajax({
+        url: "${pageContext.request.contextPath}/result",
+        contentType: "application/json;charset-UTF-8",
+        type: "POST",
+        success: function (data) {
+            var information = document.getElementById("binformation").childNodes;
+            for(var i=0;i<data.length;i++){
+                var name=information[1];
+                name.innerHTML+=data[i].name;
+                var gender=information[3];
+                gender.innerHTML+=data[i].gender;
+                var numb=information[5];
+                numb.innerHTML+=data[i].numb;
+            }
+        }
+    });
+    $(document).ready(function () {
+        $("#btn").on("click",function () {
+            var parentId01 =$('#parentId01').val();
+            var parentId02 =$('#parentId02').val();
+            var dresult =$('#dresult').val();
+            // console.log(parentId01 + " " + parentId02 + " " + dresult);
+            $.ajax({
+                url: "${pageContext.request.contextPath}/demo",
+                contentType: "application/json;charset-UTF-8",
+                data: JSON.stringify({name:name.innerHTML,parentId01: parentId01,parentId02:parentId02,dresult:dresult}),
+                type: "POST",
+                success: function (data) {
+                    alert(name.innerHTML + "病例已提交")
+                }
+            });
+        });
+
+        var data=[{"BrandName":"ACES","Modul":"91906","Quantity":"18"},
+            {"BrandName":"ADI","Modul":"REEL","Quantity":"20"},
+            {"BrandName":"ADI","Modul":"REEL7","Quantity":"0"}];
+        var information = document.getElementById("binformation").childNodes;
+        // console.log(information[3].innerHTML);
+        for(var i=0;i<data.length;i++){
+            var row=table.insertRow(table.rows.length);
+            var c1=row.insertCell(0);
+            c1.innerHTML=data[i].BrandName;
+            var c2=row.insertCell(1);
+            c2.innerHTML=data[i].Modul;
+            var c3=row.insertCell(2);
+            c3.innerHTML=data[i].Quantity;
+            var c4=row.insertCell(3);
+            c4.innerHTML='<input type="button" value="预约" class="login-btn">';
+        }
+
+    });
+</script>
+</html>

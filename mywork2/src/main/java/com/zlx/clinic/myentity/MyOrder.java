@@ -4,12 +4,18 @@ import java.util.Date;
 
 /** 包装前台数据，用来生成预约单
  * 主要用来包装申请预约的信息
+ *
+ * 要拿到预约的date，拿到科室的id，拿到病人的id，查询同日同科室的预约
  */
 public class MyOrder {
     private Integer pId;
+
     //没啥用
     private Integer dId;
+
+
     private Integer  iId;
+
     //没啥用
     private Integer rId;
     //预约当日的date

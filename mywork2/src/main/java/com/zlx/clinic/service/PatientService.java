@@ -91,8 +91,9 @@ public class PatientService {
         Integer orderCountByRoomId = myPatientFindMapper.findOrderCountByRoomId(sameDateOrder);
 
         if (oldSevenOrder == 0 && orderCount < 2 && orderCountByRoomId == 0) {
+            System.out.println("黑名单，次数满，已经预约过");
             ItemOutTreate itemOutTreate = myDoctorOut.getItemOutTreate();
-            //预约数目等于0， 可以预约
+            //预约数目大于0， 可以预约
             if (itemOutTreate.getdCount() > 0) {
                 //减少可预约约人数
                 int count = itemOutTreate.getdCount();
@@ -100,9 +101,13 @@ public class PatientService {
                 itemOutTreateMapper.updateByPrimaryKey(itemOutTreate);
                 //增加预约申请记录
                 PatientOrder o1 = new PatientOrder();
+                //病人id
                 o1.setpId(myOrder.getpId());
+                //病人预约出诊项
                 o1.setiId(itemOutTreate.getiId());
+                //预约时间
                 o1.setoDate(new Date());
+                //是否排号，默认false
                 o1.setoGo(false);
                 orderMapper.insert(o1);
                 //获取邮箱
@@ -117,10 +122,12 @@ public class PatientService {
                 return true;
             } else {
                 //预约人数以满
+                System.out.println("预约人数以满");
                 return false;
             }
         }
         //已经预约过
+        System.out.println("已经预约过");
         return false;
 
     }

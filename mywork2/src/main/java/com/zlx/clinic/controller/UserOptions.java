@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/patient")
@@ -36,22 +37,31 @@ public class UserOptions {
      * @param patient
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "/userLogin",method = {RequestMethod.GET,RequestMethod.POST})
-    public  String  userLogin(Model model, HttpSession session,  Patient patient) throws Exception {
+    public  boolean  userLogin(Model model, HttpSession session, @RequestBody Patient patient) throws Exception {
         Patient patient1 = patientService.patientLogin(patient);
         boolean result;
         if (patient1!=null) {
 //            将patient信息完整存入session中
             session.setAttribute("patient", patient1);
             result=true;
-//            return result;
-            return "/index";
+            return result;
+//            return "/index";
         }
         model.addAttribute("result","fail");
         result=false;
-//        return result;
-            return "/userlogin";
+        return result;
+//            return "/userlogin";
     }
+
+    @ResponseBody
+    @RequestMapping(value = "getUserSession",method = {RequestMethod.GET,RequestMethod.POST})
+    public Patient getUserSession(HttpSession session){
+        Patient patient = (Patient) session.getAttribute("patient");
+        return patient;
+    }
+
 
     /**
      * 用户选择相应的科室后，列出该科室具体的出诊医师
@@ -60,11 +70,12 @@ public class UserOptions {
      * @param rID          科室id
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "/chooseroom",method = {RequestMethod.GET,RequestMethod.POST})
-    public String chooseRoom(Model model, int rId) throws Exception {
+    public List<MyDoctorOut> chooseRoom(Model model,  Integer rId) throws Exception {
+
         List<MyDoctorOut> doctors = patientService.findDoctorByRID(rId);
-        model.addAttribute("oDoctors", doctors);
-        return "/WEB-INF/jsp/patient/doctor";
+        return doctors;
     }
 
 
@@ -74,19 +85,22 @@ public class UserOptions {
      *
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "/apply",method = {RequestMethod.GET,RequestMethod.POST})
-    public String userApply(HttpSession session, MyOrder myOrder) throws Exception {
+    public boolean userApply(HttpSession session,@RequestBody MyOrder myOrder) throws Exception {
+        boolean result=false;
         Patient patient = (Patient) session.getAttribute("patient");
         if(patient==null){
-            throw new MyException("未登录");
+//            throw new MyException("未登录");
+            return result;
         }
         myOrder.setpId(patient.getpId());
         System.out.println("+++++++++++++++++=" + myOrder.getdId());
-        boolean b = patientService.patientApply(myOrder);
-        if (b) {
-            return "/WEB-INF/jsp/patient/apply";
+         result = patientService.patientApply(myOrder);
+        if (result) {
+            return result;
         } else {
-            return "/WEB-INF/jsp/patient/fail";
+            return result;
         }
 
     }
@@ -97,18 +111,31 @@ public class UserOptions {
      * @param pID 病人id
      * @return
      */
-    @RequestMapping(value = "/showapply",method = {RequestMethod.GET,RequestMethod.POST})
-    public String showApply(HttpSession session, Model model) throws Exception {
+    @ResponseBody
+    @RequestMapping(value = "/showvalidapply",method = {RequestMethod.GET,RequestMethod.POST})
+    public List<MyDoctorOut> showValidApply(HttpSession session, Model model) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         if(patient==null){
             throw new MyException("未登录");
         }
         List<MyDoctorOut>  validOrders= patientService.findValidOrderByPid(patient.getpId());
-        List<MyDoctorOut> invalidOrders = patientService.findInvalidOrderByPid(patient.getpId());
-        model.addAttribute("validOrders", validOrders);
-        model.addAttribute("invalidOrders", invalidOrders);
-        return "/WEB-INF/jsp/patient/showorder";
+       return validOrders;
     }
+    @ResponseBody
+    @RequestMapping(value = "/showinvalidapply",method = {RequestMethod.GET,RequestMethod.POST})
+    public List<MyDoctorOut> showInvalidApply(HttpSession session, Model model) throws Exception {
+        Patient patient = (Patient) session.getAttribute("patient");
+        if(patient==null){
+            throw new MyException("未登录");
+        }
+        List<MyDoctorOut> invalidOrders = patientService.findInvalidOrderByPid(patient.getpId());
+       return invalidOrders;
+
+    }
+
+
+
+
 
     /**
      * 取消预约
@@ -117,17 +144,20 @@ public class UserOptions {
      * @return
      * @throws Exception
      */
+    @ResponseBody
     @RequestMapping(value = "/cancelorder",method = {RequestMethod.GET,RequestMethod.POST})
-    public String cancleOrder(HttpSession session,PatientOrder patientOrder) throws Exception {
+    public boolean cancleOrder(HttpSession session,@RequestBody PatientOrder patientOrder) throws Exception {
         Patient patient = (Patient) session.getAttribute("patient");
         if(patient==null){
             throw new MyException("未登录");
         }
+        boolean result = false;
         if (patientService.deleteOrder(patientOrder)) {
-            return "/WEB-INF/jsp/patient/apply";
-        } else {
-            return "/WEB-INF/jsp/patient/fail";
+            result= true;
+            return result;
         }
+        return result;
+
     }
 
 

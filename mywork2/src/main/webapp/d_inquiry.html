@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/puyuan.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tools.js"></script>
+</head>
+<body>
+<br/><br/>
+<!--标题-->
+<div class="navbar-centerl">
+    <img class="isize" src="img/logo.png" style="display:inline" >
+    <h1 style="display:inline">何庄子管理员系统</h1>
+</div>
+<br/><br/>
+<!--导航栏-->
+<div class="menuk">
+    <ul class="menu">
+        <ul class="navbar-centerl1">
+            <li><a href="d_login.html" class="dbt">登录</a></li>
+        </ul>
+    </ul>
+    <div class="clear"></div>
+</div>
+<!--巨幕-->
+<div class="jumbotron big-screen">
+    <img src="img/eyes.jpg">
+</div>
+<!--内容-->
+<div class="container">
+    <div class="row">
+        <!--使导航栏与下方文本对齐-->
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 divcss">
+            <br/><br/><br/>
+            <div>
+                <form class="login-form" action="#" method="post">
+                    <div id="wrong"></div>
+                    <h2 style="margin-left: -25px">病人诊断</h2>
+                    <br/><br/>
+                    <table width="550px" border="1">
+                        <tr id="binformation">
+                            <td colspan="2">姓名：</td>
+                            <td colspan="2">性别：</td>
+                            <td colspan="2">病号：</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">治疗方式：
+                                <label>
+                                    <select id="parentId01" style="color: black">
+                                        <option value="药物">药物</option>
+                                        <option value="打针">打针</option>
+                                        <option value="输液">输液</option>
+                                        <option value="住院">住院</option>
+                                    </select>
+                                </label></td>
+                            <td colspan="3">缴费内容：
+                                <label>
+                                    <select id="parentId02" style="color: black">
+                                        <option value="药物">药物</option>
+                                        <option value="打针">打针</option>
+                                        <option value="输液">输液</option>
+                                        <option value="住院">住院</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">药品选择：<br/>
+                                <hr style="border: 0.5px solid black;padding: 0;margin: 0"/>
+                                <table id="table" class="medicine">
+                                    <tr>
+                                        <td colspan="1">药品名称</td>
+                                        <td colspan="1">药品数量</td>
+                                        <td colspan="1" width="200px">数量选择</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="tdheight">诊断结果：<br/>
+                                <label for="dresult"></label><textarea id="dresult" class="inputtxt" onkeypress="newline()"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <input id="btn" class="login-btn" type="button" name="" style="width: 200px;margin-left:150px" value="确定">
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                </form>
+            </div>
+            <br/><br/><br/><br/>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<!--网页底部-->
+<br/><br/>
+<div class="foot1">
+    <div class="main">
+        <i></i>
+        <div class="d1">
+            <div class="bt1"><span class="s1">联系方式</span></div>
+            <div class="lx_nr">
+                <ul>
+                    <li>地址：xxxxxxxxxxxxxxxxxxxxx</li>
+                    <li>邮编：000000</li>
+                    <li>电话：0022-00009999</li>
+                    <li>传真：0224-00009999</li>
+                    <li>Email：<a href="mailto:szwkyy@gmail.com">333@gmail.com</a></li>
+                </ul>
+
+            </div>
+            <ul class="lb_wx">
+                <li style="margin-right: 10px;"><img src="/img/em_wx2.jpg"><p>ym</p></li>
+                <li style="margin-right: 10px;"><img src="/img/em_xl2.jpg"><p>zlx</p></li>
+                <li style="margin-right: 10px;"><img src="/img/em_fyapp.png"><p>zzj</p></li>
+            </ul>
+        </div>
+        <div class="d2">
+            <div class="bt1"><span class="s1">333专区</span></div>
+            <ul class="lm1">
+                <li><a  class="cd_z1" target="_blank"><span>ym</span></a></li>
+                <li><a  class="cd_z1" target="_blank"><span>zlx</span></a></li>
+                <li><a  class="cd_z1" target="_blank"><span>zzj</span></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="foot2">
+    <div class="main">
+        <ul class="cd_f1">
+        </ul>
+        <span class="s2 dbt"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33030202000591" ><img src="/img/ba_03.png"  /><p>天津公网安备 7e333666号</p></a></span>
+        <span class="s1">版权所有：7E333<br>  Copyright &copy; 2017 Wenzhou DongHua Hospital</span>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function newline(){
+        var taVal = document.getElementById('ta').value;
+        if(taVal != null && taVal.length > 0){
+            var len = Number(taVal.length);
+            if(len%10 == 0) {
+                document.getElementById('ta').value = document.getElementById('ta').value + "\n";
+            }
+        }
+    }
+    $.ajax({
+        url: "${pageContext.request.contextPath}/result",
+        contentType: "application/json;charset-UTF-8",
+        type: "POST",
+        success: function (data) {
+            var information = document.getElementById("binformation").childNodes;
+            for(var i=0;i<data.length;i++){
+                var name=information[1];
+                name.innerHTML+=data[i].name;
+                var gender=information[3];
+                gender.innerHTML+=data[i].gender;
+                var numb=information[5];
+                numb.innerHTML+=data[i].numb;
+            }
+        }
+    });
+    $.ajax({
+        url: "${pageContext.request.contextPath}/result",
+        contentType: "application/json;charset-UTF-8",
+        type: "POST",
+        success: function (data) {
+            var table = document.getElementById("table");
+            for(var i=0;i<data.length;i++) {
+                var row = table.insertRow(table.rows.length);
+                var c1 = row.insertCell(0);
+                c1.innerHTML = data[i].BrandName;
+                var c2 = row.insertCell(1);
+                c2.innerHTML = data[i].Modul;
+                var c3 = row.insertCell(2);
+                c3.innerHTML = '<input type="text">';
+            }
+        }
+    });
+    $(document).ready(function () {
+        $("#btn").on("click",function () {
+            var parentId01 =$('#parentId01').val();
+            var parentId02 =$('#parentId02').val();
+            var dresult =$('#dresult').val();
+            var flag = "";
+            var input = document.getElementsByTagName("input");
+            for (var i = 0 ; i<input.length - 1 ; i++){
+                var medicinename = input[i].parentNode.parentNode.childNodes[0].innerHTML;
+                var medicinenub = input[i].value;
+                flag += medicinename + ":" + medicinenub + ",";
+            }
+            // console.log(flag);
+            // console.log(parentId01 + " " + parentId02 + " " + dresult);
+            $.ajax({
+                url: "${pageContext.request.contextPath}/demo",
+                contentType: "application/json;charset-UTF-8",
+                data: JSON.stringify({name:name.innerHTML,parentId01: parentId01,parentId02:parentId02,dresult:dresult,flag}),
+                type: "POST",
+                success: function (data) {
+                    alert(name.innerHTML + "病例已提交")
+                }
+            });
+        });
+
+        var data=[{"name":"ACES","gender":"91906","numb":"18"}];
+        var information = document.getElementById("binformation").childNodes;
+        // console.log(information[3].innerHTML);
+        for(var i=0;i<data.length;i++){
+            var name=information[1];
+            name.innerHTML+=data[i].name;
+            var gender=information[3];
+            gender.innerHTML+=data[i].gender;
+            var numb=information[5];
+            numb.innerHTML+=data[i].numb;
+        }
+
+        var data01=[{"BrandName":"ACES","Modul":"91906","Quantity":"18"},
+            {"BrandName":"ADI","Modul":"REEL","Quantity":"20"},
+            {"BrandName":"ADI","Modul":"REEL7","Quantity":"0"}];
+        var table = document.getElementById("table");
+        for(var i=0;i<data01.length;i++){
+            var row=table.insertRow(table.rows.length);
+            var c1=row.insertCell(0);
+            c1.innerHTML=data01[i].BrandName;
+            var c2=row.insertCell(1);
+            c2.innerHTML=data01[i].Modul;
+            var c3=row.insertCell(2);
+            c3.innerHTML='<input type="text">';
+        }
+
+
+    });
+</script>
+</html>

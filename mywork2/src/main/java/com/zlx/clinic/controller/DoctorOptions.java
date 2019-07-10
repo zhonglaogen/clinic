@@ -42,6 +42,9 @@ public class DoctorOptions {
         return "/doctorlogin";
     }
 
+
+
+
     /**
      * 叫号
      * @param model
@@ -113,6 +116,12 @@ public class DoctorOptions {
         return "/WEB-INF/jsp/doctor/dshow";
     }
 
+    /**
+     * 显示队列
+     * @param session
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "showQueue",method = {RequestMethod.GET,RequestMethod.POST})
     public @ResponseBody List<MyArrange> getPatientQueue(HttpSession session) throws Exception {
         Doctor doctor = (Doctor) session.getAttribute("doctor");

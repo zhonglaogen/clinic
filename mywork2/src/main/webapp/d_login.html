@@ -5,14 +5,13 @@
     <title>Title</title>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style01.css">
 <body>
     <div class="login-box">
-        <div class="hide-login-btn"><i class="fas fa-times"></i></div>
         <form class="login-form" method="post">
             <h1>Welcome</h1>
-            <input class="txtb" type="text" name="Username" placeholder="Userphone">
-            <input class="txtb" type="password" name="Password" placeholder="Password">
+            <input class="txtb" type="text" name="" placeholder="UserID">
+            <input class="txtb" type="password" name="" placeholder="Password">
             <input class="login-btn" type="button" name="" value="Login"><br/>
             <a class="txtc" href="registered.html">用户注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="txtc" href="hospital.html">忘记密码</a>
@@ -20,22 +19,19 @@
     </div>
 </body>
 <script type="text/javascript">
-    $(".hide-login-btn").on("click",function () {
-        window.location.href = "home.html";
-    });
     $(document).ready(function () {
         $(".login-btn").on("click", function () {
             var Username = $("input[name='Username']").val();
             var Password = $("input[name='Password']").val();
             // window.location.href = "home.html";
             $.ajax({
-                url: "/patient/userLogin.action",
+                url: "${pageContext.request.contextPath}/demo",
                 data: JSON.stringify({pPhone:Username,pPassword: Password}),
                 contentType: "application/json;charset-UTF-8",
                 type: "POST",
                 success: function (data) {
                     console.log(data);
-                    if(data){
+                    if(data.result == "true"){
                         window.location.href = "home.html";
                     }else {
                         alert("用户名或密码错误!!!");
