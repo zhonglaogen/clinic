@@ -20,9 +20,10 @@
                 var tbody = window.document.getElementById("tbody-result");
                 var json = {'rName': rName};
                 $.ajax({
-                    url: "${pageContext.request.contextPath}/showNum.action",
-                    type: "POST",
-                    contentType: "application/json;charset=utf-8",
+                    url: "/showNum.action",
+                    data:{"rName":rName},
+                    contentType: "application/json;charset-UTF-8",
+                    // type: "GET",
                     dataType: "json",
                     success: function (msg) {
                         var str = "";
@@ -34,7 +35,7 @@
                                     "<td align='center'>";
 
                                 var aa=msg[i].patientQueue;
-                                for(var j in aa){
+                                for(var j=1;j<aa.length;j++){
                                     str += aa[j].patient.pName+"-->";
                                 }
 
@@ -66,7 +67,7 @@
     <tr>
         <td>诊室</td>
         <td>医生</td>
-        <td>正在就诊</td>
+        <td>叫号</td>
         <td>等待就诊</td>
         <td>排队数目</td>
     </tr>

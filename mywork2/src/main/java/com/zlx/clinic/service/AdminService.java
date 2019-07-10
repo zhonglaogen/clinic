@@ -233,13 +233,15 @@ public class AdminService {
     //增加可预约人数
     public void addOutCount(ItemOutTreate itemOutTreate){
         ItemOutTreate itemOutTreate1 = itemOutTreateMapper.selectByPrimaryKey(itemOutTreate.getiId());
-        int allCount=itemOutTreate1.getdAllCount()+itemOutTreate.getdAllCount();
-        int count=itemOutTreate1.getdCount()+itemOutTreate.getdAllCount();
+        int allCount=itemOutTreate1.getdAllCount();
+        allCount+=itemOutTreate.getdAllCount();
+        int count=itemOutTreate1.getdCount();
+        count+=itemOutTreate.getdAllCount();
         //设置总数目和剩余数目
-        itemOutTreate1.setdCount(allCount);
-        itemOutTreate1.setdAllCount(count);
+        itemOutTreate1.setdCount(count);
+        itemOutTreate1.setdAllCount(allCount);
         //更新
-        itemOutTreateMapper.updateByPrimaryKeySelective(itemOutTreate1);
+        itemOutTreateMapper.updateByPrimaryKey(itemOutTreate1);
 
     }
 }

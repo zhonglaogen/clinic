@@ -32,9 +32,9 @@ public class Screen {
      * @return
      */
     @RequestMapping("showNum")
-    public @ResponseBody List<PatientQueue> getDoctor(@RequestBody String rName){
+    public @ResponseBody List<PatientQueue> getDoctor( String rName){
 
-
+        int a=0;
 
        return  screenService.getDoctors(rName);
     }

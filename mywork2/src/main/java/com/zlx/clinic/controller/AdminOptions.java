@@ -66,6 +66,17 @@ public class AdminOptions {
         return 0;
     }
 
+    @RequestMapping("mdeic")
+    public String getMedic(Model model,HttpSession session) throws Exception {
+        Admin medicAdmin = (Admin) session.getAttribute("medicAdmin");
+        if (medicAdmin==null){
+            throw new MyException("未登录");
+        }
+        List<Medicine> medicineByAsc = adminService.findMedicineByAsc();
+        model.addAttribute("medics", medicineByAsc);
+        return "WEB-INF/jsp/admin/medic/medic";
+    }
+
     /**
      * 获取导诊科室
      * @param session
@@ -155,7 +166,7 @@ public class AdminOptions {
      * @throws Exception
      */
 
-    @RequestMapping(value = "requestRoom",method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "requestRoom",method = {RequestMethod.GET,RequestMethod.POST})
     public String requestRoom(HttpSession session,Model model) throws MyException {
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
         if(roomAdmin==null){
@@ -166,6 +177,14 @@ public class AdminOptions {
         return "/WEB-INF/jsp/admin/room/room";
     }
 
+    /**
+     * 根据日期拿出诊
+     * @param model
+     * @param session
+     * @param myRoomDate
+     * @return
+     * @throws Exception
+     */
 
     @RequestMapping(value = "showDoctor", method = {RequestMethod.GET, RequestMethod.POST})
     public String showDoctor(Model model, HttpSession session,MyRoomDate myRoomDate) throws Exception {
@@ -180,7 +199,7 @@ public class AdminOptions {
         model.addAttribute("noDoctors", notOutDoctor);
         //已经出诊
         model.addAttribute("oDoctors", outDoctors);
-        return "/WEB-INF/jsp/admin/room/showmessage";
+        return "WEB-INF/jsp/admin/room/showMessage";
     }
 
 
@@ -194,6 +213,7 @@ public class AdminOptions {
      * @param itemOutTreate iId dAllCount(增加的数目)
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "addCount",method = {RequestMethod.GET,RequestMethod.POST})
     public  boolean addCount(HttpSession session,ItemOutTreate itemOutTreate) throws Exception {
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
@@ -214,9 +234,10 @@ public class AdminOptions {
      * 添加出诊信息
      * @param itemOutTreate 包含医生id 和预约数目
      */
+    @ResponseBody
     @RequestMapping(value = "addOutTreat",method = {RequestMethod.GET,RequestMethod.POST})
     public boolean addOutTreat(HttpSession session, ItemOutTreate itemOutTreate) throws Exception{
-        boolean result;
+        boolean result=false;
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
         if(roomAdmin==null){
             throw new MyException("未登录");

@@ -58,11 +58,9 @@
                 <form action="/admin/addOutTreat.action">
                     <input type="hidden" value="${noOutDoctor.dId}" name="dId">
                     <input type="text" name="dAllCount" >
-                    <input type="button" value="出诊">
+                    <input type="submit" value="出诊">
                 </form>
             </td>
-
-
         </tr>
 
     </c:forEach>

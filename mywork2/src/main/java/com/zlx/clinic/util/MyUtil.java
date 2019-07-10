@@ -46,6 +46,11 @@ public class MyUtil {
         return simpleDateFormat.parse(date);
     }
 
+    public static Date changeDate1(String date) throws ParseException {
+        SimpleDateFormat simpleDateFormat1=new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        return simpleDateFormat.parse(date);
+    }
 
     public void test1(){
         Date date = new Date();
