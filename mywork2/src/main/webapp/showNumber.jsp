@@ -11,17 +11,6 @@
     <title>排号队列</title>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script>
-        function getJsonLength(msg){
-            var jsonLength = 0;
-            for(var item in msg){
-                    console.log("________"+msg[item]);
-                    for(var x in msg[item]){
-                        console.log("________"+msg[item]);
-                        jsonLength++;
-                }
-            }
-            return jsonLength;
-        }
 
 
         $(document).ready(function () {
@@ -37,11 +26,6 @@
                     dataType: "json",
                     success: function (msg) {
                         var str = "";
-                        var bbb= 0;
-                        bbb=getJsonLength(msg);
-                        console.log("+++++++++"+bbb);
-
-
                         for (var i in msg) {
                             str += "<tr>";
                                 str += "<td align='center'>" + msg[i].patientQueue[0].doctor.dId + "</td>" +
@@ -49,13 +33,15 @@
                                     "<td align='center'>" + msg[i].patientQueue[0].patient.pName + "</td>"+
                                     "<td align='center'>";
 
-                                var aa=msg[0];
-                                    str += aa.patientQueue[0].patient.pName;
+                                var aa=msg[i].patientQueue;
+                                for(var j in aa){
+                                    str += aa[j].patient.pName+"-->";
+                                }
 
-                            str += "</td>" + "<td align='center'>" + "*" + "</td>";
+
+                            str += "</td>" + "<td align='center'>" + aa.length + "</td>";
 
                             str += "</tr>";
-                            // }
                             tbody.innerHTML = str;
                         }
                     },
