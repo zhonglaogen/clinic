@@ -105,7 +105,6 @@ public class DoctorOptions {
             session.setAttribute("myArrange",myArrange);
             return true;
         }
-        model.addAttribute("result","无人排号");
        return false;
     }
 
@@ -131,8 +130,9 @@ public class DoctorOptions {
      * @param treat
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "outResult",method = {RequestMethod.GET,RequestMethod.POST})
-    public boolean outResult(HttpSession session,Treat treat) throws MyException {
+    public boolean outResult(HttpSession session,@RequestBody Treat treat) throws MyException {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         if (doctor == null) {
             throw new MyException("未登录");

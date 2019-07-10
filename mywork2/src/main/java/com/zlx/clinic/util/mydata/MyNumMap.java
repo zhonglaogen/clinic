@@ -111,7 +111,7 @@ public class MyNumMap {
 //                myArranges = (MyArrange[]) myArrangesQueue.toArray();
                  myArrangeList=new ArrayList<>();
                 Iterator<MyArrange> iterator = myArrangesQueue.iterator();
-                if(iterator.hasNext()){
+                while(iterator.hasNext()){
                     MyArrange next = iterator.next();
                     myArrangeList.add(next);
                 }

@@ -42,7 +42,7 @@
                     <div id="wrong"></div>
                     <h2 style="margin-left: -25px">病人诊断</h2>
                     <br/><br/>
-                    <table width="550px" border="1">
+                    <table id="table" width="550px" border="1">
                         <tr id="binformation">
                             <td colspan="2">姓名：</td>
                             <td colspan="2">性别：</td>
@@ -162,37 +162,16 @@
         type: "POST",
         success: function (data) {
             var information = document.getElementById("binformation").childNodes;
-            for(var i=0;i<data.length;i++){
                 var name=information[1];
-                name.innerHTML+=data[i].name;
+                name.innerHTML+=data.myArrange.patient.pName;
                 var gender=information[3];
-                gender.innerHTML+=data[i].gender;
+                gender.innerHTML+=data.myArrange.patient.pGender;
                 var numb=information[5];
-                numb.innerHTML+=data[i].numb;
-            }
-        }
-    });
-    $.ajax({
-        url: "${pageContext.request.contextPath}/result",
-        contentType: "application/json;charset-UTF-8",
-        type: "POST",
-        success: function (data) {
-            var table = document.getElementById("table");
-            for(var i=0;i<data.length;i++) {
-                var row = table.insertRow(table.rows.length);
-                var c1 = row.insertCell(0);
-                c1.innerHTML = data[i].BrandName;
-                var c2 = row.insertCell(1);
-                c2.innerHTML = data[i].Modul;
-                var c3 = row.insertCell(2);
-                c3.innerHTML = '<input type="text">';
-            }
+                numb.innerHTML+=data.myArrange.patientOrder.tId;
         }
     });
     $(document).ready(function () {
         $("#btn").on("click",function () {
-            var parentId01 =$('#parentId01').val();
-            var parentId02 =$('#parentId02').val();
             var dresult =$('#dresult').val();
             var flag = "";
             var input = document.getElementsByTagName("input");
@@ -201,46 +180,24 @@
                 var medicinenub = input[i].value;
                 flag += medicinename + ":" + medicinenub + ",";
             }
+            var table = document.getElementById("table");
+            var row=table.insertRow(table.rows.length);
+            var cinner=row.insertCell(0).innerHTML;
+            console.log(cinner + "" + dresult)
+           var  aaa1= cinner.substring(3,cinner.length-3);
             // console.log(flag);
             // console.log(parentId01 + " " + parentId02 + " " + dresult);
             $.ajax({
-                url: "${pageContext.request.contextPath}/demo",
+                url: "doctor/outResult.action",
+                data: JSON.stringify({tId:aaa1,tResult:dresult}),
                 contentType: "application/json;charset-UTF-8",
-                data: JSON.stringify({name:name.innerHTML,parentId01: parentId01,parentId02:parentId02,dresult:dresult,flag}),
                 type: "POST",
+                datatype:"json",
                 success: function (data) {
                     alert(name.innerHTML + "病例已提交")
                 }
             });
         });
-
-        var data=[{"name":"ACES","gender":"91906","numb":"18"}];
-        var information = document.getElementById("binformation").childNodes;
-        // console.log(information[3].innerHTML);
-        for(var i=0;i<data.length;i++){
-            var name=information[1];
-            name.innerHTML+=data[i].name;
-            var gender=information[3];
-            gender.innerHTML+=data[i].gender;
-            var numb=information[5];
-            numb.innerHTML+=data[i].numb;
-        }
-
-        var data01=[{"BrandName":"ACES","Modul":"91906","Quantity":"18"},
-            {"BrandName":"ADI","Modul":"REEL","Quantity":"20"},
-            {"BrandName":"ADI","Modul":"REEL7","Quantity":"0"}];
-        var table = document.getElementById("table");
-        for(var i=0;i<data01.length;i++){
-            var row=table.insertRow(table.rows.length);
-            var c1=row.insertCell(0);
-            c1.innerHTML=data01[i].BrandName;
-            var c2=row.insertCell(1);
-            c2.innerHTML=data01[i].Modul;
-            var c3=row.insertCell(2);
-            c3.innerHTML='<input type="text">';
-        }
-
-
-    });
+            });
 </script>
 </html>

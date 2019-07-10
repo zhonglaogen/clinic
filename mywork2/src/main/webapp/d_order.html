@@ -160,83 +160,44 @@
 
     $(document).ready(function () {
         $.ajax({
-            url: "${pageContext.request.contextPath}/result",
+            url: "admin/showDoctor.action",
             contentType: "application/json;charset-UTF-8",
             type: "POST",
             success: function (data) {
-                var table = document.getElementById("table");
-                for (var i = 0; i < data.length; i++) {
-                    var row = table.insertRow(table.rows.length);
+                var table01 = document.getElementById("table01");
+                for (var i = 0; i < data00.length; i++) {
+                    var row0 = table01.insertRow(table01.rows.length);
+                    var c1 = row0.insertCell(0);
+                    c1.innerHTML = data00[i].BrandName;
+                    var c2 = row0.insertCell(1);
+                    c2.innerHTML = data00[i].Modul;
+                    var c3 = row0.insertCell(2);
+                    c3.innerHTML = data00[i].Quantity;
+                    var c4 = row0.insertCell(3);
+                    c4.innerHTML = data00[i].BrandName1;
+                    var c5 = row0.insertCell(4);
+                    c5.innerHTML = data00[i].Modul1;
+                    var c6 = row0.insertCell(5);
+                    c6.innerHTML = '<input type="text" class="txtb" style="width: 70px">';
+                    var c7 = row0.insertCell(6);
+                    c7.innerHTML = '<input type="button" value="提交" class="login-btn">';
+                }
+                var table02 = document.getElementById("table02");
+                for (var i = 0; i < data01.length; i++) {
+                    var row = table02.insertRow(table02.rows.length);
                     var c1 = row.insertCell(0);
-                    c1.innerHTML = data[i].BrandName;
+                    c1.innerHTML = data01[i].BrandName;
                     var c2 = row.insertCell(1);
-                    c2.innerHTML = '<input type="button" value="上午" class="login-btn">';
+                    c2.innerHTML = data01[i].Modul;
                     var c3 = row.insertCell(2);
-                    c3.innerHTML = '<input type="button" value="下午" class="login-btn">';
+                    c3.innerHTML = '<input type="text" class="txtb" style="width: 70px">';
+                    var c4 = row.insertCell(3);
+                    c4.innerHTML = '<input type="button" value="提交" class="login-btn">';
                 }
                 btnclick();
             }
         });
 
-        var data00 = [{
-            "BrandName": "ACES",
-            "Modul": "91906",
-            "Quantity": "18",
-            "BrandName1": "ACES",
-            "Modul1": "aaa",
-            "Quantity1": "18"
-        },
-            {
-                "BrandName": "ADI",
-                "Modul": "REEL",
-                "Quantity": "20",
-                "BrandName1": "ACES",
-                "Modul1": "91906",
-                "Quantity1": "18"
-            },
-            {
-                "BrandName": "ADI",
-                "Modul": "REEL7",
-                "Quantity": "0",
-                "BrandName1": "ACES",
-                "Modul1": "91906",
-                "Quantity1": "18"
-            }];
-        var table01 = document.getElementById("table01");
-        for (var i = 0; i < data00.length; i++) {
-            var row0 = table01.insertRow(table01.rows.length);
-            var c1 = row0.insertCell(0);
-            c1.innerHTML = data00[i].BrandName;
-            var c2 = row0.insertCell(1);
-            c2.innerHTML = data00[i].Modul;
-            var c3 = row0.insertCell(2);
-            c3.innerHTML = data00[i].Quantity;
-            var c4 = row0.insertCell(3);
-            c4.innerHTML = data00[i].BrandName1;
-            var c5 = row0.insertCell(4);
-            c5.innerHTML = data00[i].Modul1;
-            var c6 = row0.insertCell(5);
-            c6.innerHTML = '<input type="text" class="txtb" style="width: 70px">';
-            var c7 = row0.insertCell(6);
-            c7.innerHTML = '<input type="button" value="提交" class="login-btn">';
-        }
-
-        var data01 = [{"BrandName": "ACES", "Modul": "91906", "Quantity": "18"},
-            {"BrandName": "ADI", "Modul": "REEL", "Quantity": "20"},
-            {"BrandName": "ADI", "Modul": "REEL7", "Quantity": "0"}];
-        var table02 = document.getElementById("table02");
-        for (var i = 0; i < data01.length; i++) {
-            var row = table02.insertRow(table02.rows.length);
-            var c1 = row.insertCell(0);
-            c1.innerHTML = data01[i].BrandName;
-            var c2 = row.insertCell(1);
-            c2.innerHTML = data01[i].Modul;
-            var c3 = row.insertCell(2);
-            c3.innerHTML = '<input type="text" class="txtb" style="width: 70px">';
-            var c4 = row.insertCell(3);
-            c4.innerHTML = '<input type="button" value="提交" class="login-btn">';
-        }
-        btnclick();
     });
 </script>
 </html>

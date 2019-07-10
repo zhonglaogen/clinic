@@ -25,7 +25,7 @@ public class ScreenService {
                 PatientQueue patientQueue = new PatientQueue();
                 Iterator iterator = l.iterator();
                 //遍历队列，取出所有病人，放入病人队列
-                if (iterator.hasNext()) {
+                while (iterator.hasNext()) {
                     MyArrange next = (MyArrange) iterator.next();
                     patientQueue.getPatientQueue().add(next);
                 }

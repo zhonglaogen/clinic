@@ -108,16 +108,18 @@
         // console.log(btn);
         for (var j = 0;j<btn.length;j=j+2){
             var time = btn[j].innerHTML;
+            var date =btn[j].parentNode.childNodes[1];
             // console.log(btn[j]);
+            console.log(date);
+            console.log(time);
             btn[j].onclick = function () {
                 $.ajax({
-                    url: "${pageContext.request.contextPath}/demo",
+                    url: "admin/setDate.action",
                     contentType: "application/json;charset-UTF-8",
-                    data: JSON.stringify({time: time}),
+                    data: JSON.stringify({iDate: date,iUpDown:time}),
                     type: "POST",
                     success: function (data) {
                         console.log(data);
-                        alert("预约成功");
                         window.location.href = "d_order.html";
                     }
                 });
@@ -125,12 +127,13 @@
         }
         for (var j = 1;j<btn.length;j=j+2){
             var time = btn[j].innerHTML;
+            var date =btn[j].parentNode.childNodes[1];
             // console.log(btn[j]);
             btn[j].onclick = function () {
                 $.ajax({
-                    url: "${pageContext.request.contextPath}/demo",
+                    url: "admin/setDate.action",
                     contentType: "application/json;charset-UTF-8",
-                    data: JSON.stringify({time: time}),
+                    data: JSON.stringify({iDate: date,iUpDown:time}),
                     type: "POST",
                     success: function (data) {
                         console.log(data);
