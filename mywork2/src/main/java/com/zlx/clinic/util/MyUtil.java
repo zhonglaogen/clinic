@@ -1,6 +1,5 @@
 package com.zlx.clinic.util;
 
-import org.junit.Test;
 import org.slf4j.LoggerFactory;
 
 import java.security.MessageDigest;
@@ -48,7 +47,6 @@ public class MyUtil {
     }
 
 
-    @Test
     public void test1(){
         Date date = new Date();
         String s = MyUtil.changeDate(date);

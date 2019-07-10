@@ -11,28 +11,50 @@
     <title>排号队列</title>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script>
+        function getJsonLength(msg){
+            var jsonLength = 0;
+            for(var item in msg){
+                    console.log("________"+msg[item]);
+                    for(var x in msg[item]){
+                        console.log("________"+msg[item]);
+                        jsonLength++;
+                }
+            }
+            return jsonLength;
+        }
+
 
         $(document).ready(function () {
-            $("#findRname").on('click',function () {
+            $("#findRname").on('click', function () {
                 alert("click")
                 var rName = $("input[name='rName']").val();
                 var tbody = window.document.getElementById("tbody-result");
-                var json={'rName':rName};
+                var json = {'rName': rName};
                 $.ajax({
                     url: "${pageContext.request.contextPath}/showNum.action",
-                    data:json,
-                    type:"POST",
+                    type: "POST",
                     contentType: "application/json;charset=utf-8",
                     dataType: "json",
                     success: function (msg) {
-                            var str = "";
-                            for (var i in msg) {
+                        var str = "";
+                        var bbb= 0;
+                        bbb=getJsonLength(msg);
+                        console.log("+++++++++"+bbb);
 
-                                str += "<tr>" +
-                                    "<td align='center'>" + msg[i].dId + "</td>" +
-                                    "<td align='center'>" + msg[i].dName + "</td>" +
-                                    "<td align='center'>" + msg[i].rId + "</td>" +
-                                    "</tr>";
+
+                        for (var i in msg) {
+                            str += "<tr>";
+                                str += "<td align='center'>" + msg[i].patientQueue[0].doctor.dId + "</td>" +
+                                    "<td align='center'>" + msg[i].patientQueue[0].doctor.dName + "</td>" +
+                                    "<td align='center'>" + msg[i].patientQueue[0].patient.pName + "</td>"+
+                                    "<td align='center'>";
+
+                                var aa=msg[0];
+                                    str += aa.patientQueue[0].patient.pName;
+
+                            str += "</td>" + "<td align='center'>" + "*" + "</td>";
+
+                            str += "</tr>";
                             // }
                             tbody.innerHTML = str;
                         }
@@ -49,8 +71,8 @@
 </head>
 <body>
 
-    <input type="text" name="rName">
-    <input type="button" name="findRname" id="findRname" value="查询">
+<input type="text" name="rName">
+<input type="button" name="findRname" id="findRname" value="查询">
 
 科室名称：<input type="hidden" name="rName">
 

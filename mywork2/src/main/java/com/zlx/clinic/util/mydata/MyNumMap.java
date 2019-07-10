@@ -1,7 +1,6 @@
 package com.zlx.clinic.util.mydata;
 
 import com.zlx.clinic.myentity.MyArrange;
-import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -92,7 +91,6 @@ public class MyNumMap {
 
     }
 
-    @Test
     public void test1(){
         HashMap<String,Integer> s=new HashMap<>();
 
@@ -117,6 +115,11 @@ public class MyNumMap {
         return myArranges;
     }
 
+    /**
+     * 通过科室查询医生map
+     * @param rName
+     * @return
+     */
     public static ConcurrentHashMap<String, LinkedBlockingDeque<MyArrange>> getArrange(String rName) {
         return screenShow.get(rName);
 

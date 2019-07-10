@@ -1,5 +1,6 @@
 package com.zlx.clinic.myentity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,13 +8,13 @@ import java.util.List;
  */
 public class PatientQueue {
 
-    private List<MyArrange> PatientQueue;
+    private List<MyArrange> patientQueue =new ArrayList<>();
 
     public List<MyArrange> getPatientQueue() {
-        return PatientQueue;
+        return patientQueue;
     }
 
     public void setPatientQueue(List<MyArrange> patientQueue) {
-        PatientQueue = patientQueue;
+        this.patientQueue = patientQueue;
     }
 }

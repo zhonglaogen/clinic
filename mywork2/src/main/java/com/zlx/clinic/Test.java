@@ -3,6 +3,7 @@ package com.zlx.clinic;
 import com.zlx.clinic.entity.Admin;
 import com.zlx.clinic.mapper.AdminMapper;
 import com.zlx.clinic.myentity.MyArrange;
+import com.zlx.clinic.mymapper.MyDoctorMapper;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,26 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedTransferQueue;
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:spring/applicationContext-dao.xml")
 public class Test extends JFrame
 {
+    @Autowired
+    private MyDoctorMapper myDoctorMapper;
 
-    public static void main(String[] args) throws ParseException {
+    @org.junit.Test
+    public void testMapper() throws Exception {
+        String s = myDoctorMapper.findrNamebydId(1);
+        System.out.println(s);
+    }
+
+
+
+
+
+
+
+    private static void testChangeDate() throws ParseException {
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         Date date = simpleDateFormat.parse("2019-7-8");
         //当前日期
@@ -31,7 +47,6 @@ public class Test extends JFrame
 
         //当前日期大于指定天数－１
         System.out.println(new Date().compareTo(time)>0);
-
     }
 
     private static int testSwitch() {

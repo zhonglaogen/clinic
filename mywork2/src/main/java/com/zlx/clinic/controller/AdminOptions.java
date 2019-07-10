@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
@@ -132,16 +133,18 @@ public class AdminOptions {
      * @return
      */
     @RequestMapping(value = "addCount",method = {RequestMethod.GET,RequestMethod.POST})
-    public String  addCount(HttpSession session,ItemOutTreate itemOutTreate) throws Exception {
+    public @ResponseBody  boolean addCount(HttpSession session,ItemOutTreate itemOutTreate) throws Exception {
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
         if(roomAdmin==null){
             throw new MyException("未登录");
         }
+        boolean result;
 
         adminService.addOutCount(itemOutTreate);
         System.out.println(itemOutTreate.getdAllCount());
         System.out.println(itemOutTreate);
-        return "/WEB-INF/jsp/admin/room/showMessage";
+        result =true;
+        return result;
     }
 
 
@@ -150,7 +153,9 @@ public class AdminOptions {
      * @param itemOutTreate 包含医生id 和预约数目
      */
     @RequestMapping(value = "addOutTreat",method = {RequestMethod.GET,RequestMethod.POST})
-    public String addOutTreat(HttpSession session,ItemOutTreate itemOutTreate) throws Exception{
+    public @ResponseBody
+    boolean addOutTreat(HttpSession session, ItemOutTreate itemOutTreate) throws Exception{
+        boolean result;
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
         if(roomAdmin==null){
             throw new MyException("未登录");
@@ -158,7 +163,8 @@ public class AdminOptions {
         MyRoomDate myRoomDate = (MyRoomDate) session.getAttribute("myRoomDate");
        //将日期传入service
         adminService.addOutTreat(itemOutTreate,myRoomDate);
-        return "/WEB-INF/jsp/admin/room/showMessage";
+        result =true;
+       return result;
     }
 
 

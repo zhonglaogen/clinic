@@ -1,17 +1,21 @@
 package com.zlx.clinic.controller;
 
 import com.zlx.clinic.entity.Doctor;
+import com.zlx.clinic.entity.Patient;
 import com.zlx.clinic.entity.Treat;
 import com.zlx.clinic.exception.MyException;
 import com.zlx.clinic.myentity.MyArrange;
 import com.zlx.clinic.service.DoctorService;
+import com.zlx.clinic.util.mydata.MyNumMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/doctor")
@@ -109,4 +113,14 @@ public class DoctorOptions {
         return "/WEB-INF/jsp/doctor/dshow";
     }
 
+    @RequestMapping(value = "showQueue",method = {RequestMethod.GET,RequestMethod.POST})
+    public @ResponseBody List<MyArrange> getPatientQueue(HttpSession session) throws Exception {
+        Doctor doctor = (Doctor) session.getAttribute("doctor");
+        if (doctor == null) {
+            throw new MyException("未登录");
+        }
+        List<MyArrange> patientQueue = doctorService.getPatientQueue(doctor);
+
+        return patientQueue;
+    }
 }

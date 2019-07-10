@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlx.clinic.mymapper.MyDoctorMapper">
+
+    <!--根据医生id查询科室姓名-->
+    <select id="findrNamebydId" parameterType="int" resultType="string" >
+
+        select r_name from clinic.room join clinic.doctor on room.r_id=doctor.r_id
+        where doctor.d_id=#{value}
+
+    </select>
+
+
+
+
+
+</mapper>

@@ -1,17 +1,16 @@
 package com.zlx.clinic.service;
 
-import com.zlx.clinic.entity.Doctor;
-import com.zlx.clinic.entity.DoctorExample;
-import com.zlx.clinic.entity.Room;
-import com.zlx.clinic.entity.Treat;
+import com.zlx.clinic.entity.*;
 import com.zlx.clinic.mapper.DoctorMapper;
 import com.zlx.clinic.mapper.RoomMapper;
 import com.zlx.clinic.mapper.TreatMapper;
 import com.zlx.clinic.myentity.MyArrange;
+import com.zlx.clinic.mymapper.MyDoctorMapper;
 import com.zlx.clinic.util.mydata.MyNumMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +23,8 @@ public class DoctorService {
     private RoomMapper roomMapper;
     @Autowired
     private TreatMapper treatMapper;
+    @Autowired
+    private MyDoctorMapper myDoctorMapper;
 
     /**
      * 登录
@@ -105,6 +106,15 @@ public class DoctorService {
         treatMapper.updateByPrimaryKeySelective(treat);
         //将排号从队列中移除
         MyNumMap.removeNum(room.getrName(),dId);
+
+    }
+
+    public List<MyArrange> getPatientQueue(Doctor doctor) throws Exception {
+        //拿到科室名称
+        String rName = myDoctorMapper.findrNamebydId(doctor.getdId());
+
+        MyArrange[] arrange = MyNumMap.getArrange(rName, doctor.getdId().toString());
+        return Arrays.asList(arrange);
 
     }
 
