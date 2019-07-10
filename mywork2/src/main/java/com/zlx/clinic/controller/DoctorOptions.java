@@ -10,12 +10,15 @@ import com.zlx.clinic.util.mydata.MyNumMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/doctor")
@@ -31,15 +34,18 @@ public class DoctorOptions {
      * @param doctor
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "doctorLogin",method = {RequestMethod.GET,RequestMethod.POST})
-    public String doctorLogin(Model model, HttpSession session, Doctor doctor){
+    public boolean doctorLogin(Model model, HttpSession session, @RequestBody Doctor doctor){
         Doctor doctor1 = doctorService.doctorLogin(doctor);
+        boolean result=false;
         if(doctor1!=null){
             session.setAttribute("doctor",doctor1);
-            return "/WEB-INF/jsp/doctor/dshow";
+            result = true;
+            return result;
         }
-        model.addAttribute("result","fail");
-        return "/doctorlogin";
+        //密码错误
+        return result;
     }
 
 
@@ -50,16 +56,16 @@ public class DoctorOptions {
      * @param model
      * @param session
      */
+    @ResponseBody
     @RequestMapping(value = "callNum",method = {RequestMethod.GET,RequestMethod.POST})
-    public String callNum(Model model,HttpSession session) throws MyException {
+    public MyArrange callNum(Model model,HttpSession session) throws MyException {
         //将医生信息传入service，叫号
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         if (doctor == null) {
             throw new MyException("未登录");
         }
         MyArrange myArrange = doctorService.callNum(doctor);
-        model.addAttribute("myArrange",myArrange);
-        return "/WEB-INF/jsp/doctor/dshow";
+        return myArrange;
     }
 
     /**
@@ -68,14 +74,15 @@ public class DoctorOptions {
      * @param session
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "nextNum",method = {RequestMethod.GET,RequestMethod.POST})
-    public String  nextNum(Model model,HttpSession session) throws MyException {
+    public boolean  nextNum(Model model,HttpSession session) throws MyException {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         if (doctor == null) {
             throw new MyException("未登录");
         }
         doctorService.nextNum(doctor);
-        return "/WEB-INF/jsp/doctor/dshow";
+        return true;
     }
 
     /**
@@ -84,20 +91,38 @@ public class DoctorOptions {
      * @param session
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "showTreat",method = {RequestMethod.GET,RequestMethod.POST})
-    public String showTreat(Model model,HttpSession session) throws MyException {
+    public boolean showTreat(Model model,HttpSession session) throws MyException {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         if (doctor == null) {
         throw new MyException("未登录");
         }
         MyArrange myArrange = doctorService.callNum(doctor);
         if(myArrange!=null){
-//            Treat treat = doctorService.getTreat(myArrange);
-//            session.setAttribute("treat",treat);
-            return "/WEB-INF/jsp/doctor/treat";
+            Treat treat = doctorService.getTreat(myArrange);
+            session.setAttribute("treat",treat);
+            session.setAttribute("myArrange",myArrange);
+            return true;
         }
         model.addAttribute("result","无人排号");
-       return "/WEB-INF/jsp/doctor/dshow";
+       return false;
+    }
+
+    /**
+     * 返回当前的诊治预约
+     * @param session
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "getTreat",method = {RequestMethod.GET,RequestMethod.POST})
+    public Map<String,Object> getArrangeTreat(HttpSession session){
+        MyArrange myArrange = (MyArrange) session.getAttribute("myArrange");
+        Treat treat = (Treat) session.getAttribute("treat");
+        Map<String,Object> arrangeTreat=new HashMap<>();
+        arrangeTreat.put("myArrange",myArrange);
+        arrangeTreat.put("treat",treat);
+        return arrangeTreat;
     }
 
     /**
@@ -107,13 +132,17 @@ public class DoctorOptions {
      * @return
      */
     @RequestMapping(value = "outResult",method = {RequestMethod.GET,RequestMethod.POST})
-    public String outResult(HttpSession session,Treat treat) throws MyException {
+    public boolean outResult(HttpSession session,Treat treat) throws MyException {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         if (doctor == null) {
             throw new MyException("未登录");
         }
+        boolean result=true;
         doctorService.postTreat(treat,doctor);
-        return "/WEB-INF/jsp/doctor/dshow";
+        //清除session
+        session.removeAttribute("myArrange");
+        session.removeAttribute("treat");
+        return result;
     }
 
     /**

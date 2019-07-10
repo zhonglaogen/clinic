@@ -5,6 +5,10 @@
 <configuration>
 
     <!--全局setting根据需要配置-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="useGeneratedKeys" value="true"/>
+    </settings>
 
 
     <typeAliases>

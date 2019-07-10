@@ -52,6 +52,7 @@
                 <table id="table1" width="550px" border="1">
                     <tr>
                         <td>oId</td>
+                        <td>科室</td>
                         <td>医生</td>
                         <td>就诊单号</td>
                         <td>就诊日期</td>
@@ -65,6 +66,7 @@
                 <table id="table2" width="550px" border="1">
                     <tr>
                         <td>oId</td>
+                        <td>科室</td>
                         <td>医生</td>
                         <td>就诊单号</td>
                         <td>就诊日期</td>
@@ -130,6 +132,17 @@
 </div>
 </body>
 <script type="text/javascript">
+    function room(x) {
+        if (x==1){
+            return x="外科";
+        } else if (x==2){
+            return x="内科";
+        } else if (x==3){
+            return x="儿科";
+        } else if (x==4){
+            return x="口腔科";
+        }
+    }
     function add0(m){return m<10?'0'+m:m }
     function timeFormat(timestamp){
         //timestamp是整数，否则要parseInt转换,不会出现少个0的情况
@@ -186,21 +199,23 @@
             for (var i = 0; i < data.length; i++) {
                 var row = table1.insertRow(table1.rows.length);
                 var c1 = row.insertCell(0);
-                c1.innerHTML = data[i].patientOrder.oId;
+                c1.innerHTML = data[i].itemOutTreate.oId;
                 var c2 = row.insertCell(1);
-                c2.innerHTML = data[i].doctor.dName;
+                c2.innerHTML = room(data[i].doctor.rId);
                 var c3 = row.insertCell(2);
-                c3.innerHTML = data[i].patientOrder.tId;
+                c3.innerHTML = data[i].doctor.dName;
                 var c4 = row.insertCell(3);
-                c4.innerHTML = timeFormat(data[i].itemOutTreate.iDate)+ "/" + data[i].itemOutTreate.iUpDown;
+                c4.innerHTML = data[i].patientOrder.tId;
                 var c5 = row.insertCell(4);
-                c5.innerHTML = timeFormat(data[i].patientOrder.oDate);
+                c5.innerHTML = timeFormat(data[i].itemOutTreate.iDate);
                 var c6 = row.insertCell(5);
+                c6.innerHTML = timeFormat(data[i].patientOrder.oDate);
+                var c7 = row.insertCell(6);
                 // console.log(data[i].Quantity !== "true");
                 if (data[i].patientOrder.oGo == false) {
-                    c6.innerHTML = '<input type="button" value="取消预约" class="login-btn">';
+                    c7.innerHTML = '<input type="button" value="取消预约" class="login-btn">';
                 } else {
-                    c6.innerHTML = "已排好";
+                    c7.innerHTML = "已排好";
                 }
             }
             del();
@@ -217,20 +232,22 @@
             for (var i = 0; i < data.length; i++) {
                 var row = table2.insertRow(table2.rows.length);
                 var c1 = row.insertCell(0);
-                c1.innerHTML = data[i].patientOrder.oId;
+                c1.innerHTML = data[i].itemOutTreate.oId;
                 var c2 = row.insertCell(1);
-                c2.innerHTML = data[i].doctor.dName;
+                c2.innerHTML = room(data[i].doctor.rId);
                 var c3 = row.insertCell(2);
-                c3.innerHTML = data[i].patientOrder.tId;
+                c3.innerHTML = data[i].doctor.dName;
                 var c4 = row.insertCell(3);
-                c4.innerHTML = timeFormat(data[i].itemOutTreate.iDate)+ "/" + data[i].itemOutTreate.iUpDown;
+                c4.innerHTML = data[i].patientOrder.tId;
                 var c5 = row.insertCell(4);
-                c5.innerHTML = timeFormat(data[i].patientOrder.oDate);
+                c5.innerHTML = timeFormat(data[i].itemOutTreate.iDate);
                 var c6 = row.insertCell(5);
+                c6.innerHTML = timeFormat(data[i].patientOrder.oDate);
+                var c7 = row.insertCell(6);
                 if (data[i].patientOrder.oGo) {
-                    c6.innerHTML = "已排号";
+                    c7.innerHTML = "已排号";
                 } else {
-                    c6.innerHTML = "未到";
+                    c7.innerHTML = "未到";
                 }
             }
             $('#table2 tr').find('td:eq(0)').hide();

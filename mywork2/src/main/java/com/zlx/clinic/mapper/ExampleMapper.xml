@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlx.clinic.mymapper.ExampleMapper">
+    <resultMap id="BaseOTInfo" type="com.zlx.clinic.dto.OutTreateInfo">
+        <id column="o_id" property="oId"/>
+        <result column="r_id" property="rId"/>
+        <result column="r_name" property="rName"/>
+        <result column="o_date" property="oDate"/>
+        <result column="o_time" property="oTime"/>
+        <collection property="infos" ofType="com.zlx.clinic.dto.ItemTreateInfo">
+            <id column="i_id" property="iId"/>
+            <result column="d_id" property="dId"/>
+            <result column="d_name" property="dName"/>
+            <result column="d_count" property="dCount"/>
+            <result column="d_all_count" property="dAllCount"/>
+        </collection>
+    </resultMap>
+    <resultMap id="BasePatientOrder" type="com.zlx.clinic.dto.POrderInfo">
+        <id column="p_id" property="pId"/>
+        <result column="p_name" property="pName"/>
+        <collection property="outTreateInfos" resultMap="BaseOTInfo"/>
+    </resultMap>
+    <!--select t.t_id,t.p_id,p.p_name,t.d_id,d.d_name,
+      t.t_result,t.t_type,t.t_bed,t.t_date,t.t_total_price,
+      t.t_pay,mo.mo_id,mo.m_id,m.m_name,mo.m_count
+    from treat t
+      join patient p on t.p_id=p.p_id
+      join doctor d on t.d_id=d.d_id
+      join medic_order mo on mo.t_id=t.t_id
+      join medicine m on m.m_id=mo.m_id
+    where t.p_id=#{pId};-->
+    <resultMap id="BasePatientTreate" type="com.zlx.clinic.dto.PatientTreateInfo">
+        <id column="t_id" property="tId"/>
+        <result column="p_id" property="pId"/>
+        <result column="p_name" property="pName"/>
+        <result column="t_result" property="tResult"/>
+        <result column="t_type" property="tType"/>
+        <result column="t_bed" property="tBed"/>
+        <result column="t_date" property="tDate"/>
+        <result column="t_total_price" property="tTotalPrice"/>
+        <collection property="medicineInfos" ofType="com.zlx.clinic.dto.MedicineInfo">
+            <id column="mo_id" property="moId"/>
+            <result column="m_id" property="mId"/>
+            <result column="m_name" property="mName"/>
+            <result column="m_count" property="mCount"/>
+            <result column="m_price" property="mPrice"/>
+        </collection>
+    </resultMap>
+    <resultMap id="BaseDoctorTreate" type="com.zlx.clinic.dto.DoctorTreateInfo">
+        <id column="d_id" property="dId"/>
+        <result column="d_name" property="dName"/>
+        <collection property="patientTreateInfos" resultMap="BasePatientTreate"/>
+    </resultMap>
+    <resultMap id="TreateMedicineInfo" type="com.zlx.clinic.dto.TreateMedicineInfo">
+        <id column="t_id" property="tId"/>
+        <collection property="medicineInfos" ofType="com.zlx.clinic.dto.MedicineInfo">
+            <id column="m_id" property="mId"/>
+            <result column="m_name" property="mName"/>
+            <result column="m_count" property="mCount"/>
+            <result column="m_price" property="mPrice"/>
+        </collection>
+    </resultMap>
+    <sql id="AWEEK">
+      and o.o_date &lt;= date_add(curdate(), interval 7 day)
+      and o.o_date > curdate()
+    </sql>
+    <sql id="Select_Tables_OT">
+        select
+        <if test="pId != null and pId != 0">
+            pa.p_id,pa.p_name,
+        </if>
+        o.o_id,o.r_id,r.r_name,o.o_date,o.o_time,
+        i.i_id,i.d_id,d.d_name,i.d_count,i.d_all_count
+        from out_treate o
+        join item_out_treate i on o.o_id=i.o_id
+        join room r on r.r_id=o.r_id
+        join doctor d on d.d_id=i.d_id
+        <if test="pId != null and pId != 0">
+            join patient_order p on p.i_id=i.i_id
+            join patient pa on p.p_id=pa.p_id
+        </if>
+        <where>
+            <if test="dId != null and dId != 0">
+                and i.d_id=#{dId}
+            </if>
+            <if test="rId != null and rId != 0">
+                and o.r_id=#{rId}
+            </if>
+            <if test="pId != null and pId != 0">
+                and pa.p_id=#{pId}
+            </if>
+            <if test="pId == null">
+                <include refid="com.zlx.clinic.mymapper.ExampleMapper.AWEEK"/>
+            </if>
+        </where>
+    </sql>
+    <sql id="Select_treate_PD">
+        select t.t_id,t.p_id,p.p_name,t.d_id,d.d_name,
+            t.t_result,t.t_type,t.t_bed,t.t_date,t.t_total_price,
+            t.t_pay,mo.mo_id,mo.m_id,m.m_name,mo.m_count,m.m_price
+        from treat t
+            join patient p on t.p_id=p.p_id
+            join doctor d on t.d_id=d.d_id
+            join medic_order mo on mo.t_id=t.t_id
+            join medicine m on m.m_id=mo.m_id
+        <where>
+            <if test="pId != null and pId != 0">
+                and t.p_id=#{pId}
+            </if>
+            <if test="dId != null and dId != 0">
+                and t.d_id=#{dId}
+            </if>
+        </where>
+    </sql>
+</mapper>

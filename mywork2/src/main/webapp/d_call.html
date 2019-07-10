@@ -44,6 +44,7 @@
                     <div id="wrong"></div>
                     <table id="table" width="170px" border="1">
                         <tr>
+                            <td>tId</td>
                             <td>病患姓名</td>
                         </tr>
                     </table>
@@ -52,11 +53,11 @@
                 <br/><br/>
             </div>
             <div style="margin-top: 120px">
-                <input id="btn01" class="login-btn" style="width: 100px;margin-left: -35px" type="button" name="paihao" value="下一位"><br/><br/>
+                <div id="inner"></div>
+                <input id="btn01" class="login-btn" style="width: 100px;margin-left: -10px" type="button" name="paihao" value="下一位"><br/><br/>
                 <input id="btn02" class="login-btn" style="width: 100px" type="button" name="paihao" value="问诊"><br/><br/>
-                <input id="btn03" class="login-btn" style="width: 100px" type="button" name="paihao" value="未到"><br/><br/>
+                <input id="btn03" class="login-btn" style="width: 100px" type="button" name="paihao" value="三次未到"><br/><br/>
             </div>
-
             <br/><br/><br/><br/>
         </div>
         <div class="col-sm-1"></div>
@@ -108,24 +109,45 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#btn02").on("click",function () {
-            window.location.href = "inquiry.html";
+        $("#btn01").on("click",function () {
+            var people = document.getElementsByTagName("td")[3].innerHTML;
+            var inner = document.getElementById("inner");
+            inner.innerHTML = "<b style='margin-left: -30px'>" + "正在叫号:" +people + "</b><br/>"
+            console.log(people);
         });
-        //提交科室信息
+        $("#btn02").on("click",function () {
+            $.ajax({
+                url: "doctor/showTreat.action",
+                contentType: "application/json;charset-UTF-8",
+                dataType:"json",
+                type: "POST",
+                success: function (data) {
+                    if (data){
+                        window.location.href = "d_inquiry.html";
+                    } else {
+                        alert("无人问诊");
+                    }
+                }
+            });
+        });
+        $("#btn03").on("click",function () {
+            $.ajax({
+                url: "doctor/nextNum.action",
+                contentType: "application/json;charset-UTF-8",
+                dataType:"json",
+                type: "POST",
+                success: function (data) {
+                    if (data){
+                        location.reload(true);
+                    } else {
+                        alert("已是最后一人");
+                    }
+                }
+            });
+        });
         $('#parentId').change(function() {
             var department = $(this).val();
-            // console.log(department);
-            // remove();
-            /*var data=[{"BrandName":"aaa","Modul":"91906-0227P","Quantity":"3057"},
-                {"BrandName":"bbb","Modul":"ADM706TARZ-REEL","Quantity":"2145"},
-                {"BrandName":"ccc","Modul":"ADR02AUJZ-REEL7","Quantity":"2131"}];
-            var table = document.getElementById("table");
-            for(var i=0;i<data.length;i++){
-                var row=table.insertRow(table.rows.length);
-                var c1=row.insertCell(0);
-                c1.innerHTML=data[i].BrandName;
-            }*/
-            // btnclick();
+
             $.ajax({
                 url: "${pageContext.request.contextPath}/demo",
                 data: {department: department},
@@ -154,14 +176,22 @@
                 }
             }
         });*/
-        var data=[{"BrandName":"ACES","Modul":"91906","Quantity":"18"},
-            {"BrandName":"ADI","Modul":"REEL","Quantity":"20"},
-            {"BrandName":"ADI","Modul":"REEL7","Quantity":"0"}];
-        var table = document.getElementById("table");
-        for(var i=0;i<data.length;i++){
-            var row=table.insertRow(table.rows.length);
-            var c1=row.insertCell(0);
-            c1.innerHTML=data[i].BrandName;
+    });
+    $.ajax({
+        url: "doctor/showQueue.action",
+        contentType: "application/json;charset-UTF-8",
+        dataType:"json",
+        type: "POST",
+        success: function (data) {
+            var table = document.getElementById("table");
+            for (var i = 0; i < data.length; i++) {
+                var row = table.insertRow(table.rows.length);
+                var c1 = row.insertCell(0);
+                c1.innerHTML = data[i].patientOrder.tId;
+                var c2 = row.insertCell(1);
+                c2.innerHTML = data[i].patient.pName;
+            }
+            $('#table tr').find('td:eq(0)').hide();
         }
     });
 </script>

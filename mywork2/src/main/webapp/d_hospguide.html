@@ -95,37 +95,28 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
-            url: "${pageContext.request.contextPath}/result",
+            url: "admin/getRname.action",
             type: "POST",
             success: function (data) {
-                for(var i=0;i<data.length;i++){
-                    var room = document.getElementById("room");
-                    room.innerHTML+=data[i].room;
-                }
+                var room = document.getElementById("room");
+                room.innerHTML+=data.rName;
             }
         });
         $("#btn").on("click",function () {
             var phone = document.getElementsByName("phone")[0].value;
             // console.log(phone.value);
             $.ajax({
-                url: "${pageContext.request.contextPath}/demo",
-                data: {phone: phone},
-                type: "POST",
+                url: "admin/arrange.action",
+                data: {"pPhone": phone},
+                contentType: "application/json;charset-UTF-8",
+                // type: "POST",
+                dataType:"json",
                 success: function (data) {
-                    console.log(data);
-                }
-            });
-            $.ajax({
-                url: "${pageContext.request.contextPath}/result",
-                type: "POST",
-                success: function (data) {
-                    for(var i=0;i<data.length;i++){
-                       if ( data[i].flag == true){
-                           alert("排号成功");
-                       } else {
-                           alert("排号失败");
-                       }
-                    }
+                        if (data){
+                            alert("排号成功");
+                        } else {
+                            alert("排号失败");
+                        }
                 }
             });
         });

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlx.clinic.mymapper.MyMapper">
+  <select id="slectTreateInfoByDId" resultMap="com.zlx.clinic.mymapper.ExampleMapper.BaseDoctorTreate">
+    <include refid="com.zlx.clinic.mymapper.ExampleMapper.Select_treate_PD"/>
+  </select>
+  <select id="selectMedicineInfos" resultMap="MedicineOrders">
+    select m.m_id,m.m_name,sum(mo.m_count) m_count,m.m_price
+      from medicine m
+      join medic_order mo on m.m_id=mo.m_id
+      group by m.m_id
+  </select>
+  <resultMap id="MedicineOrders" type="com.zlx.clinic.dto.MedicineInfo">
+    <id column="m_id" property="mId"/>
+    <result column="m_name" property="mName"/>
+    <result column="m_count" property="mCount"/>
+    <result column="m_price" property="mPrice"/>
+  </resultMap>
+  <select id="selectByRoomId" resultMap="com.zlx.clinic.mymapper.ExampleMapper.BaseOTInfo">
+    <include refid="com.zlx.clinic.mymapper.ExampleMapper.Select_Tables_OT"/>
+  </select>
+  <select id="slectByDoctorId" resultMap="com.zlx.clinic.mymapper.ExampleMapper.BaseOTInfo">
+    <include refid="com.zlx.clinic.mymapper.ExampleMapper.Select_Tables_OT"/>
+  </select>
+  <select id="slectTreateInfoByPId" resultMap="com.zlx.clinic.mymapper.ExampleMapper.BaseDoctorTreate">
+    <include refid="com.zlx.clinic.mymapper.ExampleMapper.Select_treate_PD"/>
+  </select>
+  <select id="selectSimplePatient" resultType="com.zlx.clinic.dto.SimplePatientInfo">
+    select t.t_id,p.p_name,p.p_gender
+    from treat t
+      join patient p on t.p_id=p.p_id
+    where t.t_id=#{tId};
+  </select>
+  <select id="selectByPId" resultMap="com.zlx.clinic.mymapper.ExampleMapper.BasePatientOrder">
+    <include refid="com.zlx.clinic.mymapper.ExampleMapper.Select_Tables_OT"/>
+  </select>
+  <select id="selectTreateInfoPaied" resultMap="com.zlx.clinic.mymapper.ExampleMapper.BaseDoctorTreate">
+    select t.t_id,t.p_id,p.p_name,t.d_id,d.d_name,
+      t.t_result,t.t_type,t.t_bed,t.t_date,t.t_total_price,
+      t.t_pay,mo.mo_id,mo.m_id,m.m_name,mo.m_count,m.m_price
+    from treat t
+      join patient p on t.p_id=p.p_id
+      join doctor d on t.d_id=d.d_id
+      join medic_order mo on mo.t_id=t.t_id
+      join medicine m on m.m_id=mo.m_id
+    where t.t_pay=1
+  </select>
+  <select id="selectTreateHistory" resultType="com.zlx.clinic.dto.TreateHistory">
+    select t.t_id,p.p_name,d.d_name,
+      t.t_result,t.t_type,t.t_bed,t.t_date,t.t_total_price,
+      m.m_name,mo.m_count
+    from treat t
+      join patient p on t.p_id=p.p_id
+      join doctor d on t.d_id=d.d_id
+      join medic_order mo on mo.t_id=t.t_id
+      join medicine m on m.m_id=mo.m_id;
+  </select>
+  <select id="selectMedInfoByTId" resultMap="com.zlx.clinic.mymapper.ExampleMapper.TreateMedicineInfo">
+    select t.t_id,m.m_id,m.m_name,mo.m_count,m.m_price
+    from treat t
+      join medic_order mo on mo.t_id=t.t_id
+      join medicine m on m.m_id=mo.m_id
+    where t.t_id=#{tId}
+  </select>
+  <select id="selectTotalOfOrder" resultType="java.lang.Integer">
+    select count(*) as order_total
+    from patient_order;
+  </select>
+  <select id="selectToatalOfPatient" resultType="java.lang.Integer">
+    select count(distinct t.p_id) as p_total
+    from treat t;
+  </select>
+</mapper>

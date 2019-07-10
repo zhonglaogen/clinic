@@ -120,9 +120,11 @@ public class AdminService {
                 //排号成功
                 return true;
             }
+            System.out.println("//此预约已经排过号");
             //此预约已经排过号
             return false;
         }
+        System.out.println("//无此人预约，今日，此科室，无此人，预约");
         //无此人预约，今日，此科室，无此人，预约
         return false;
 

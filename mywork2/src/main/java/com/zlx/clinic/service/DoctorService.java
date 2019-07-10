@@ -113,8 +113,11 @@ public class DoctorService {
         //拿到科室名称
         String rName = myDoctorMapper.findrNamebydId(doctor.getdId());
 
-        MyArrange[] arrange = MyNumMap.getArrange(rName, doctor.getdId().toString());
-        return Arrays.asList(arrange);
+        List<MyArrange> arrange = MyNumMap.getArrange(rName, doctor.getdId().toString());
+        if(arrange!=null){
+            return arrange;
+        }
+        return  null;
 
     }
 

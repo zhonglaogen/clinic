@@ -70,6 +70,7 @@
                                 </label></td>
                         </tr>
                         <tr>
+<!--
                             <td colspan="6">药品选择：<br/>
                                 <hr style="border: 0.5px solid black;padding: 0;margin: 0"/>
                                 <table id="table" class="medicine">
@@ -80,6 +81,7 @@
                                     </tr>
                                 </table>
                             </td>
+-->
                         </tr>
                         <tr>
                             <td colspan="6" class="tdheight">诊断结果：<br/>
@@ -155,7 +157,7 @@
         }
     }
     $.ajax({
-        url: "${pageContext.request.contextPath}/result",
+        url: "doctor/getTreat.action",
         contentType: "application/json;charset-UTF-8",
         type: "POST",
         success: function (data) {

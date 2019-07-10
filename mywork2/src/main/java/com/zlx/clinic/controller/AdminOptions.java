@@ -9,15 +9,14 @@ import com.zlx.clinic.util.MyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin")
@@ -26,8 +25,10 @@ public class AdminOptions {
     private AdminService adminService;
 
 
+    @ResponseBody
     @RequestMapping(value = "/adminLogin", method = {RequestMethod.GET, RequestMethod.POST})
-    public String adminLogin(Model model, HttpSession httpSession, Admin admin) throws Exception {
+    public Integer adminLogin(Model model, HttpSession httpSession,@RequestBody Admin admin) throws Exception {
+        int i=0;
         Admin admin1 = adminService.adminLogin(admin);
         if (admin1 != null) {
             Byte aByte = admin1.getaGrade();
@@ -35,65 +36,99 @@ public class AdminOptions {
                 case 1:
                     //导诊
                     httpSession.setAttribute("arrangeAdmin", admin1);
-                    Room room = adminService.findRoomByAId(admin1.getaId());
-                    httpSession.setAttribute("aroom", room);
-                    return "WEB-INF/jsp/admin/num/numArrange";
+//                    Room room = adminService.findRoomByAId(admin1.getaId());
+//                    httpSession.setAttribute("aroom", room);
+                    return 1;
                 case 2:
                     //药品管理员
-                    List<Medicine> medicineByAsc =
-                            adminService.findMedicineByAsc();
                     httpSession.setAttribute("medicAdmin",admin1);
-                    model.addAttribute("medics", medicineByAsc);
-                    model.addAttribute("test", "test");
-                    return "/WEB-INF/jsp/admin/medic/medic";
+//                    List<Medicine> medicineByAsc = adminService.findMedicineByAsc();
+//                    model.addAttribute("medics", medicineByAsc);
+                    return 2;
                 case 3:
                     //科室管理员
-                    List<String> sevenDate = adminService.getSevenDate();
                     httpSession.setAttribute("roomAdmin",admin1);
-                    model.addAttribute("dates", sevenDate);
-                    return "/WEB-INF/jsp/admin/room/room";
+//                    List<String> sevenDate = adminService.getSevenDate();
+//                    model.addAttribute("dates", sevenDate);
+                    return 3;
                 case 4:
                     httpSession.setAttribute("allAdmin",admin1);
-                    return "/WEB-INF/jsp/admin/all/allAdmin";
+                    return 4;
                 default:
                     //没有权限
                     System.out.println("没有权限");
-                    model.addAttribute("error", "have no authority");
-                    return "/adminlogin";
+                    return 5;
             }
 
         }
         //用户名或密码错误
         System.out.println("用户名或密码错误");
-        model.addAttribute("error", "user or password error");
-        return "/adminlogin";
+        return 0;
     }
+
+    /**
+     * 获取导诊科室
+     * @param session
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getRname",method = {RequestMethod.GET,RequestMethod.POST})
+    public Room getRname(HttpSession session) throws MyException {
+        Admin arrangeAdmin = (Admin) session.getAttribute("arrangeAdmin");
+        if(arrangeAdmin==null){
+            throw new MyException("未登录");
+        }
+        Room room = adminService.findRoomByAId(arrangeAdmin.getaId());
+        return room;
+    }
+
+
+
 
     /** 导诊排号
      * @param model       排号结果
      * @param httpSession 导诊自身信息，获取科室名
      * @param phone       查询是否有此人
      * @return
-     * @throws Exception
+     * @throws Exception  @RequestParam(value = "aPhone", required = true)
      * @RequestParam 表示前端参数名和controller不同，用这个注解来绑定，required为true，如果参数未传入，报错
      * 导诊排号
      */
+    @ResponseBody
     @RequestMapping(value = "/arrange", method = {RequestMethod.GET, RequestMethod.POST})
-    public String arrange(Model model, HttpSession httpSession, @RequestParam(value = "aPhone", required = true) String phone) throws Exception {
+    public boolean arrange(Model model, HttpSession httpSession,  String pPhone) throws Exception {
         Admin arrangeUser = (Admin) httpSession.getAttribute("arrangeAdmin");
         if(arrangeUser==null){
             throw new MyException("未登录");
         }
+        boolean result=false;
         //将科室管理员和手机号传入service
-        if (adminService.arrangeQueue(phone, arrangeUser)) {
+        if (adminService.arrangeQueue(pPhone, arrangeUser)) {
             //安排成功
-            model.addAttribute("result", "排号成功");
-            return "/WEB-INF/jsp/patient/apply";
+            result =true;
+            return result;
         } else {
             //安排失败，今日无此人预约
-            model.addAttribute("result", "检查是否已经预约，或是否已经排号");
-            return "/WEB-INF/jsp/patient/fail";
+            return false;
         }
+    }
+
+
+    /**
+     * 获取以后七天日期
+     * @param session
+     * @return
+     * @throws MyException
+     */
+    @ResponseBody
+    @RequestMapping(value = "getSevenDate",method = {RequestMethod.GET,RequestMethod.POST})
+    public List<String> getSevenDate(HttpSession session) throws MyException {
+        Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
+        if(roomAdmin==null){
+            throw new MyException("未登录");
+        }
+        List<String> sevenDate = adminService.getSevenDate();
+        return sevenDate;
     }
 
 
@@ -105,20 +140,23 @@ public class AdminOptions {
      * @return
      * @throws Exception
      */
+    @ResponseBody
     @RequestMapping(value = "showDoctor", method = {RequestMethod.GET, RequestMethod.POST})
-    public String showDoctor(Model model,HttpSession session, MyRoomDate myRoomDate) throws Exception {
+    public Map<String,Object> showDoctor(Model model, HttpSession session, @RequestBody MyRoomDate myRoomDate) throws Exception {
         Admin roomAdmin = (Admin) session.getAttribute("roomAdmin");
         if(roomAdmin==null){
             throw new MyException("未登录");
         }
+        Map<String,Object> result=new HashMap<>();
         session.setAttribute("myRoomDate",myRoomDate);
         List<MyDoctorOut> outDoctors = adminService.getDoctorByDate(myRoomDate,roomAdmin);
         List<Doctor> notOutDoctor = adminService.getNotOutDoctor(myRoomDate, roomAdmin);
         //未出诊
         model.addAttribute("noDoctors", notOutDoctor);
+        result.put("noDoctors",notOutDoctor);
         //已经出诊
-        model.addAttribute("oDoctors", outDoctors);
-        return "/WEB-INF/jsp/admin/room/showMessage";
+        result.put("oDoctors", outDoctors);
+        return result;
     }
 
 

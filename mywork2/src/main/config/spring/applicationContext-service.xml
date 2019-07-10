@@ -17,5 +17,9 @@
     <bean id="adminService" class="com.zlx.clinic.service.AdminService"></bean>
     <bean id="doctorService" class="com.zlx.clinic.service.DoctorService"></bean>
     <bean id="screenService" class="com.zlx.clinic.service.ScreenService"></bean>
+    <bean id="infoService" class="com.zlx.clinic.service.InfoService"></bean>
+    <bean id="treateService" class="com.zlx.clinic.service.TreateService"></bean>
+    <bean id="excelService" class="com.zlx.clinic.service.ExcelService"></bean>
+
 
 </beans>

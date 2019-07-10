@@ -6,7 +6,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   <welcome-file-list>
-    <welcome-file>login.html</welcome-file>
+    <welcome-file>d_login.html</welcome-file>
   </welcome-file-list>
   <!-- 加载spring容器 -->
   <context-param>

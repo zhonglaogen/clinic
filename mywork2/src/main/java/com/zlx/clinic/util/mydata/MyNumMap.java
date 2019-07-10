@@ -2,8 +2,7 @@ package com.zlx.clinic.util.mydata;
 
 import com.zlx.clinic.myentity.MyArrange;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -104,15 +103,21 @@ public class MyNumMap {
      * @param dId
      * @return
      */
-    public static MyArrange[] getArrange(String rName,String dId){
-        MyArrange[] myArranges=null;
+    public static List<MyArrange> getArrange(String rName,String dId){
+        List<MyArrange> myArrangeList=null;
         if(screenShow.get(rName)!=null){
             LinkedBlockingDeque<MyArrange> myArrangesQueue = screenShow.get(rName).get(dId);
             if(myArrangesQueue!=null){
-                myArranges = (MyArrange[]) myArrangesQueue.toArray();
+//                myArranges = (MyArrange[]) myArrangesQueue.toArray();
+                 myArrangeList=new ArrayList<>();
+                Iterator<MyArrange> iterator = myArrangesQueue.iterator();
+                if(iterator.hasNext()){
+                    MyArrange next = iterator.next();
+                    myArrangeList.add(next);
+                }
             }
         }
-        return myArranges;
+        return myArrangeList;
     }
 
     /**

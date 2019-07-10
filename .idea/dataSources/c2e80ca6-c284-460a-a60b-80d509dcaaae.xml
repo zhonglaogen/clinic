@@ -1447,6 +1447,7 @@
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="335" parent="242" name="t_type">
       <Position>5</Position>
