@@ -32,9 +32,14 @@ public class Screen {
      * @return
      */
     @RequestMapping("showNum")
-    public @ResponseBody List<PatientQueue> getDoctor(){
+    public @ResponseBody List<PatientQueue> getDoctor(@RequestBody String rName){
 
 
+
+       return  screenService.getDoctors(rName);
+    }
+
+    private List<PatientQueue> testArry() {
         List<PatientQueue> patientQueues=new ArrayList<>();
 
 
@@ -103,9 +108,7 @@ public class Screen {
 
 
         return patientQueues;
-//       return  screenService.getDoctors(rName);
     }
-
 
 
 }
